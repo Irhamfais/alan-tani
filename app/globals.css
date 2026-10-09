@@ -1,26 +1,137 @@
 @import "tailwindcss";
 
+/* CSS Tokens (extracted from preview HTML) - Dark theme only */
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  /* Background colors */
+  --bg:          #031A13;   /* page base, deepest forest */
+  --bg-alt:      #052A1F;   /* alternate sections */
+  --bg-deep:     #02120D;   /* footer */
+  
+  /* Surface colors */
+  --surface:     #0A3D2D;   /* card color */
+  --surface-hi:  #0E4A37;   /* surface hover */
+  --canopy:      #0F5A41;   /* hero glow, labels */
+  
+  /* Accent colors */
+  --accent:      #2BD66F;   /* bright green (buttons) */
+  --accent-hi:   #4BE485;   /* accent hover */
+  --on-accent:   #03180F;   /* text on accent */
+  
+  /* Text colors */
+  --text:        #EAF6EF;   /* primary text */
+  --text-2:      #A9CBB8;   /* secondary text */
+  --text-3:      #7FA690;   /* captions */
+  
+  /* Border */
+  --line:        rgba(234, 246, 239, .12);
+  
+  /* Typography */
+  --font-display: "Bricolage Grotesque", "Segoe UI", system-ui, sans-serif;
+  --font-body:    "Figtree", "Segoe UI", system-ui, sans-serif;
+  
+  /* Layout */
+  --radius: 20px;
+  --header-h: 76px;
+  
+  box-sizing: border-box;
+  padding-top: env(safe-area-inset-top, 0px);
+  padding-bottom: env(safe-area-inset-bottom, 0px);
 }
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+/* Base styles */
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: calc(var(--header-h) + env(safe-area-inset-top, 0px) + 12px);
+  background: var(--bg);
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+*, *::before, *::after {
+  box-sizing: inherit;
+  margin: 0;
 }
 
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  background: var(--bg);
+  color: var(--text);
+  font-family: var(--font-body);
+  font-weight: 400;
+  line-height: 1.65;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* Reset styles */
+img, svg {
+  display: block;
+  max-width: 100%;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+button {
+  font: inherit;
+  color: inherit;
+  background: none;
+  border: 0;
+  cursor: pointer;
+  padding: 0;
+}
+
+ul {
+  list-style: none;
+  padding: 0;
+}
+
+/* Accessibility */
+:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 3px;
+  border-radius: 6px;
+}
+
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  white-space: nowrap;
+}
+
+/* Typography */
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-display);
+  font-weight: 600;
+  line-height: 1.08;
+  letter-spacing: -0.02em;
+}
+
+/* Animations */
+@keyframes ring {
+  0% {
+    transform: scale(1);
+    opacity: 0.7;
+  }
+  70%, 100% {
+    transform: scale(1.5);
+    opacity: 0;
+  }
+}
+
+.animate-ring {
+  animation: ring 2.8s ease-out infinite;
+}
+
+/* Reduced motion */
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+  
+  *, *::before, *::after {
+    animation: none !important;
+    transition-duration: 0.01ms !important;
+  }
 }

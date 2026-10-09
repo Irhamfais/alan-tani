@@ -9,29 +9,38 @@ const config: Config = {
   theme: {
     extend: {
       colors: {
-        // Green theme - sesuai DESIGN.md
-        primary: {
-          DEFAULT: '#16a34a', // green-600
-          dark: '#15803d',    // green-700
-          light: '#22c55e',   // green-500
-          bright: '#4ade80',  // green-400
-        },
-        // Custom colors jika dibutuhkan
-        whatsapp: '#25D366',
+        // Background colors
+        bg: 'var(--bg)',
+        'bg-alt': 'var(--bg-alt)',
+        'bg-deep': 'var(--bg-deep)',
+        
+        // Surface colors
+        surface: 'var(--surface)',
+        'surface-hi': 'var(--surface-hi)',
+        canopy: 'var(--canopy)',
+        
+        // Accent colors
+        accent: 'var(--accent)',
+        'accent-hi': 'var(--accent-hi)',
+        'on-accent': 'var(--on-accent)',
+        
+        // Text colors
+        text: 'var(--text)',
+        'text-2': 'var(--text-2)',
+        'text-3': 'var(--text-3)',
+        
+        // Border
+        line: 'var(--line)',
       },
       fontFamily: {
-        display: ['var(--font-bricolage)', 'sans-serif'],
-        body: ['var(--font-figtree)', 'sans-serif'],
+        display: 'var(--font-display)',
+        body: 'var(--font-body)',
       },
-      container: {
-        center: true,
-        padding: {
-          DEFAULT: '1.5rem',
-          sm: '2rem',
-          lg: '4rem',
-          xl: '5rem',
-          '2xl': '6rem',
-        },
+      borderRadius: {
+        DEFAULT: 'var(--radius)',
+      },
+      spacing: {
+        'header': 'var(--header-h)',
       },
     },
   },
