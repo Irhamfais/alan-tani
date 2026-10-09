@@ -1,0 +1,112 @@
+﻿{
+  "products": [
+    {
+      "id": "tuna-sirip-kuning",
+      "name": "Tuna Sirip Kuning",
+      "slug": "tuna-sirip-kuning",
+      "category": "hasil-tangkapan",
+      "price": 0,
+      "priceNote": "Hubungi untuk harga",
+      "description": "Tuna sirip kuning segar, kualitas ekspor, kaya omega-3. Hasil tangkapan berkualitas tinggi dari perairan Indonesia.",
+      "images": [
+        "/images/products/tuna-sirip-kuning.jpg"
+      ],
+      "isBestSeller": true,
+      "marketplaceLinks": {
+        "shopee": "#",
+        "tokopedia": "#",
+        "tiktokshop": "#"
+      }
+    },
+    {
+      "id": "salmon-atlantik",
+      "name": "Ikan Salmon Atlantik",
+      "slug": "salmon-atlantik",
+      "category": "hasil-tangkapan",
+      "price": 0,
+      "priceNote": "Hubungi untuk harga",
+      "description": "Salmon atlantik premium, fresh frozen, ideal untuk sushi dan sashimi. Kualitas terbaik dengan omega-3 tinggi.",
+      "images": [
+        "/images/products/salmon-atlantik.jpg"
+      ],
+      "isBestSeller": true,
+      "marketplaceLinks": {
+        "shopee": "#",
+        "tokopedia": "#",
+        "tiktokshop": "#"
+      }
+    },
+    {
+      "id": "udang-windu",
+      "name": "Udang Windu",
+      "slug": "udang-windu",
+      "category": "hasil-tangkapan",
+      "price": 0,
+      "priceNote": "Hubungi untuk harga",
+      "description": "Udang windu segar dari tambak berkualitas. Ukuran besar, daging kenyal dan manis. Cocok untuk berbagai masakan.",
+      "images": [
+        "/images/products/udang-windu.jpg"
+      ],
+      "isBestSeller": true,
+      "marketplaceLinks": {
+        "shopee": "#",
+        "tokopedia": "#",
+        "tiktokshop": "#"
+      }
+    },
+    {
+      "id": "kepiting-soka",
+      "name": "Kepiting Soka",
+      "slug": "kepiting-soka",
+      "category": "hasil-tangkapan",
+      "price": 0,
+      "priceNote": "Hubungi untuk harga",
+      "description": "Kepiting soka pilihan, daging lembut dan gurih. Perfect untuk kepiting telur asin atau saus padang.",
+      "images": [
+        "/images/products/kepiting-soka.jpg"
+      ],
+      "isBestSeller": false,
+      "marketplaceLinks": {
+        "shopee": "#",
+        "tokopedia": "#",
+        "tiktokshop": "#"
+      }
+    },
+    {
+      "id": "cumi-cumi",
+      "name": "Cumi-Cumi Segar",
+      "slug": "cumi-cumi-segar",
+      "category": "hasil-tangkapan",
+      "price": 0,
+      "priceNote": "Hubungi untuk harga",
+      "description": "Cumi-cumi segar langsung dari laut. Tekstur kenyal, cocok untuk digoreng, bakar, atau tumis.",
+      "images": [
+        "/images/products/cumi-cumi.jpg"
+      ],
+      "isBestSeller": false,
+      "marketplaceLinks": {
+        "shopee": "#",
+        "tokopedia": "#",
+        "tiktokshop": "#"
+      }
+    },
+    {
+      "id": "kerapu-macan",
+      "name": "Kerapu Macan",
+      "slug": "kerapu-macan",
+      "category": "hasil-tangkapan",
+      "price": 0,
+      "priceNote": "Hubungi untuk harga",
+      "description": "Kerapu macan premium, daging putih tebal dan lembut. Hasil budidaya berkualitas tinggi.",
+      "images": [
+        "/images/products/kerapu-macan.jpg"
+      ],
+      "isBestSeller": true,
+      "marketplaceLinks": {
+        "shopee": "#",
+        "tokopedia": "#",
+        "tiktokshop": "#"
+      }
+    }
+  ]
+}
