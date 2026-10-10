@@ -1,47 +1,63 @@
-﻿{
-  "storeName": "Alan Tani",
-  "tagline": "Solusi Pertanian Modern untuk Hasil Maksimal",
-  "description": "Menyediakan produk berkualitas tinggi untuk mendukung kesuksesan usaha pertanian dan perikanan Anda",
+{
+  "storeName": "Alan Tani Jaya",
+  "tagline": "Solusi Terbaik Petani",
   "established": "2020",
-  "locations": [
-    {
-      "id": "balikpapan",
-      "name": "Toko Balikpapan",
-      "address": "Jl. Jenderal Sudirman No. 123, Balikpapan",
-      "city": "Balikpapan",
-      "phone": "+62 812-3456-7890",
-      "email": "balikpapan@alantani.com",
-      "mapsUrl": "https://maps.google.com",
-      "mapsEmbed": ""
+  "waNumber": "6285875613333",
+  "waDisplay": "+62 858-7561-3333",
+  "email": "alantanijaya@gmail.com",
+  "operatingHours": "Senin sampai Minggu, 07.00 sampai 16.00 WIB",
+  "operatingHoursShort": "07.00 - 16.00 WIB",
+  "stores": {
+    "induk": {
+      "id": "induk",
+      "name": "Toko Induk",
+      "address": "Jl. Hoscokro Aminoto, Tanggul Kulon, Kec. Tanggul, Kab. Jember",
+      "mapUrl": "https://share.google/os4Ak9UN3mJQ9AGzL",
+      "mapsAppUrl": "https://maps.app.goo.gl/os4Ak9UN3mJQ9AGzL"
     },
-    {
-      "id": "gresik",
-      "name": "Toko Gresik",
-      "address": "Jl. Veteran No. 45, Gresik",
-      "city": "Gresik",
-      "phone": "+62 823-4567-8901",
-      "email": "gresik@alantani.com",
-      "mapsUrl": "https://maps.google.com",
-      "mapsEmbed": ""
+    "cabang": {
+      "id": "cabang",
+      "name": "Toko Cabang",
+      "address": "Jl. Mawar (Pasar Tanggul), Tanggul, Jember, Jawa Timur",
+      "mapUrl": "https://share.google/1ZGzgLxBJCIZ7WLDJ",
+      "mapsAppUrl": "https://maps.app.goo.gl/1ZGzgLxBJCIZ7WLDJ"
     }
-  ],
-  "operatingHours": {
-    "weekdays": "Senin - Sabtu: 08:00 - 17:00",
-    "weekend": "Minggu: Tutup"
-  },
-  "contact": {
-    "whatsapp": "+6281234567890",
-    "email": "info@alantani.com",
-    "whatsappMessage": "Halo, saya ingin bertanya tentang produk"
-  },
-  "socialMedia": {
-    "facebook": "https://facebook.com/alantani",
-    "instagram": "https://instagram.com/alantani",
-    "youtube": "https://youtube.com/@alantani"
   },
   "marketplace": {
-    "shopee": "#",
-    "tokopedia": "#",
-    "tiktokshop": "#"
-  }
+    "shopee": "https://shopee.co.id/",
+    "tokopedia": "https://www.tokopedia.com/",
+    "tiktokshop": "https://www.tiktok.com/"
+  },
+  "social": {
+    "facebook": "https://www.facebook.com/",
+    "tiktok": "https://www.tiktok.com/"
+  },
+  "coverage": {
+    "lokal": "Jember",
+    "regional": "Jawa Timur",
+    "nasional": "Seluruh Indonesia, lewat pengiriman"
+  },
+  "heroPoints": [
+    {
+      "id": "r1",
+      "icon": "award",
+      "bold": "R1 Seller.",
+      "text": "Keaslian produk terjamin."
+    },
+    {
+      "id": "shipping",
+      "icon": "truck",
+      "text": "Pengiriman cepat ke seluruh Indonesia."
+    },
+    {
+      "id": "consultation",
+      "icon": "message-circle",
+      "text": "Menerima konsultasi terkait kondisi pertanian Anda."
+    },
+    {
+      "id": "service",
+      "icon": "check",
+      "text": "Pelayanan ramah, tanya langsung lewat WhatsApp."
+    }
+  ]
 }

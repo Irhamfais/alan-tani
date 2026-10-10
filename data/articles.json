@@ -1,0 +1,47 @@
+[
+  {
+    "id": "a1",
+    "slug": "cara-memilih-pupuk-yang-tepat",
+    "category": "Pupuk",
+    "date": "5 Okt 2026",
+    "read": "4 menit baca",
+    "title": "Cara memilih pupuk yang tepat",
+    "excerpt": "Kenali perbedaan pupuk majemuk, tunggal, dan organik, lalu sesuaikan dengan fase tanam dan jenis tanaman Anda."
+  },
+  {
+    "id": "a2",
+    "slug": "tips-budidaya-tanaman-produktif",
+    "category": "Budidaya",
+    "date": "4 Okt 2026",
+    "read": "5 menit baca",
+    "title": "Tips budidaya tanaman agar produktif",
+    "excerpt": "Dari persiapan lahan sampai panen: kebiasaan sederhana yang membantu hasil tanam lebih maksimal."
+  },
+  {
+    "id": "a3",
+    "slug": "panduan-penggunaan-pestisida-aman",
+    "category": "Pestisida",
+    "date": "3 Okt 2026",
+    "read": "5 menit baca",
+    "title": "Panduan penggunaan pestisida yang aman",
+    "excerpt": "Baca label, takar dosis dengan benar, dan lindungi diri saat menyemprot. Panduan singkat untuk petani."
+  },
+  {
+    "id": "a4",
+    "slug": "teknik-perawatan-tanaman-modern",
+    "category": "Perawatan",
+    "date": "2 Okt 2026",
+    "read": "4 menit baca",
+    "title": "Teknik perawatan tanaman modern",
+    "excerpt": "Pengairan hemat air, pemupukan terjadwal, dan pemantauan hama yang bisa diterapkan di lahan kecil maupun besar."
+  },
+  {
+    "id": "a5",
+    "slug": "memilih-bibit-unggul-berkualitas",
+    "category": "Bibit",
+    "date": "1 Okt 2026",
+    "read": "4 menit baca",
+    "title": "Memilih bibit unggul berkualitas",
+    "excerpt": "Ciri bibit yang sehat dan cara membaca label sebelum Anda menanam."
+  }
+]

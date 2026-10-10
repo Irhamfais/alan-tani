@@ -1,20 +1,17 @@
-﻿import type { Metadata } from 'next';
+import type { Metadata } from 'next';
 import { Bricolage_Grotesque, Figtree } from 'next/font/google';
 import './globals.css';
-import Header from '@/components/Header';
-import Footer from '@/components/Footer';
-import FloatingWhatsApp from '@/components/FloatingWhatsApp';
 
 const bricolage = Bricolage_Grotesque({
   subsets: ['latin'],
-  variable: '--font-display',
+  variable: '--font-display-next',
   weight: ['500', '600', '700'],
   display: 'swap',
 });
 
 const figtree = Figtree({
   subsets: ['latin'],
-  variable: '--font-body',
+  variable: '--font-body-next',
   weight: ['400', '500', '600', '700'],
   display: 'swap',
 });
@@ -32,15 +29,10 @@ export default function RootLayout({
   return (
     <html lang="id">
       <body className={`${bricolage.variable} ${figtree.variable}`}>
-        <a className="skip absolute left-4 -top-16 bg-[var(--accent)] text-[var(--on-accent)] px-4 py-[0.6rem] rounded-full z-[100] font-semibold focus:top-4" href="#main">
+        <a className="skip" href="#main">
           Lewati ke konten utama
         </a>
-        <Header />
-        <main id="main">
-          {children}
-        </main>
-        <Footer />
-        <FloatingWhatsApp />
+        {children}
       </body>
     </html>
   );

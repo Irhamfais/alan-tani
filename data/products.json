@@ -1,112 +1,98 @@
-﻿{
-  "products": [
-    {
-      "id": "tuna-sirip-kuning",
-      "name": "Tuna Sirip Kuning",
-      "slug": "tuna-sirip-kuning",
-      "category": "hasil-tangkapan",
-      "price": 0,
-      "priceNote": "Hubungi untuk harga",
-      "description": "Tuna sirip kuning segar, kualitas ekspor, kaya omega-3. Hasil tangkapan berkualitas tinggi dari perairan Indonesia.",
-      "images": [
-        "/images/products/tuna-sirip-kuning.jpg"
-      ],
-      "isBestSeller": true,
-      "marketplaceLinks": {
-        "shopee": "#",
-        "tokopedia": "#",
-        "tiktokshop": "#"
-      }
-    },
-    {
-      "id": "salmon-atlantik",
-      "name": "Ikan Salmon Atlantik",
-      "slug": "salmon-atlantik",
-      "category": "hasil-tangkapan",
-      "price": 0,
-      "priceNote": "Hubungi untuk harga",
-      "description": "Salmon atlantik premium, fresh frozen, ideal untuk sushi dan sashimi. Kualitas terbaik dengan omega-3 tinggi.",
-      "images": [
-        "/images/products/salmon-atlantik.jpg"
-      ],
-      "isBestSeller": true,
-      "marketplaceLinks": {
-        "shopee": "#",
-        "tokopedia": "#",
-        "tiktokshop": "#"
-      }
-    },
-    {
-      "id": "udang-windu",
-      "name": "Udang Windu",
-      "slug": "udang-windu",
-      "category": "hasil-tangkapan",
-      "price": 0,
-      "priceNote": "Hubungi untuk harga",
-      "description": "Udang windu segar dari tambak berkualitas. Ukuran besar, daging kenyal dan manis. Cocok untuk berbagai masakan.",
-      "images": [
-        "/images/products/udang-windu.jpg"
-      ],
-      "isBestSeller": true,
-      "marketplaceLinks": {
-        "shopee": "#",
-        "tokopedia": "#",
-        "tiktokshop": "#"
-      }
-    },
-    {
-      "id": "kepiting-soka",
-      "name": "Kepiting Soka",
-      "slug": "kepiting-soka",
-      "category": "hasil-tangkapan",
-      "price": 0,
-      "priceNote": "Hubungi untuk harga",
-      "description": "Kepiting soka pilihan, daging lembut dan gurih. Perfect untuk kepiting telur asin atau saus padang.",
-      "images": [
-        "/images/products/kepiting-soka.jpg"
-      ],
-      "isBestSeller": false,
-      "marketplaceLinks": {
-        "shopee": "#",
-        "tokopedia": "#",
-        "tiktokshop": "#"
-      }
-    },
-    {
-      "id": "cumi-cumi",
-      "name": "Cumi-Cumi Segar",
-      "slug": "cumi-cumi-segar",
-      "category": "hasil-tangkapan",
-      "price": 0,
-      "priceNote": "Hubungi untuk harga",
-      "description": "Cumi-cumi segar langsung dari laut. Tekstur kenyal, cocok untuk digoreng, bakar, atau tumis.",
-      "images": [
-        "/images/products/cumi-cumi.jpg"
-      ],
-      "isBestSeller": false,
-      "marketplaceLinks": {
-        "shopee": "#",
-        "tokopedia": "#",
-        "tiktokshop": "#"
-      }
-    },
-    {
-      "id": "kerapu-macan",
-      "name": "Kerapu Macan",
-      "slug": "kerapu-macan",
-      "category": "hasil-tangkapan",
-      "price": 0,
-      "priceNote": "Hubungi untuk harga",
-      "description": "Kerapu macan premium, daging putih tebal dan lembut. Hasil budidaya berkualitas tinggi.",
-      "images": [
-        "/images/products/kerapu-macan.jpg"
-      ],
-      "isBestSeller": true,
-      "marketplaceLinks": {
-        "shopee": "#",
-        "tokopedia": "#",
-        "tiktokshop": "#"
-      }
-    }
-  ]
-}
+[
+  {
+    "id": "p1",
+    "name": "Pupuk NPK Mutiara 16-16-16 (1 kg)",
+    "slug": "pupuk-npk-mutiara-16-16-16",
+    "category": "pupuk",
+    "price": 24000,
+    "isBestSeller": true,
+    "description": "Pupuk majemuk dengan nitrogen, fosfat, dan kalium seimbang untuk mendukung pertumbuhan akar, batang, dan tunas.",
+    "shape": "sack",
+    "tag1": "NPK",
+    "tag2": "16-16-16"
+  },
+  {
+    "id": "p2",
+    "name": "Benih Padi Inpari 32 (5 kg)",
+    "slug": "benih-padi-inpari-32",
+    "category": "bibit",
+    "price": 85000,
+    "isBestSeller": true,
+    "description": "Benih padi bersertifikat dengan daya tumbuh tinggi dan tahan hawar daun bakteri.",
+    "shape": "packet",
+    "tag1": "Inpari",
+    "tag2": "32"
+  },
+  {
+    "id": "p3",
+    "name": "Insektisida Regent 50 SC (250 ml)",
+    "slug": "insektisida-regent-50-sc",
+    "category": "pestisida",
+    "price": 78000,
+    "isBestSeller": true,
+    "description": "Insektisida sistemik untuk mengendalikan wereng, penggerek batang, dan thrips. Gunakan sesuai dosis di label.",
+    "shape": "bottle",
+    "tag1": "Regent",
+    "tag2": "50 SC"
+  },
+  {
+    "id": "p4",
+    "name": "Sprayer Elektrik Swan 16 liter",
+    "slug": "sprayer-elektrik-swan-16l",
+    "category": "alat-pertanian",
+    "price": 495000,
+    "isBestSeller": true,
+    "description": "Tangki semprot elektrik berbaterai. Tekanan semprot stabil dan hemat tenaga di sawah maupun kebun.",
+    "shape": "sprayer",
+    "tag1": "16 L",
+    "tag2": ""
+  },
+  {
+    "id": "p5",
+    "name": "Pupuk Organik Cair Hayati (1 liter)",
+    "slug": "pupuk-organik-cair-hayati",
+    "category": "pupuk",
+    "price": 45000,
+    "isBestSeller": false,
+    "description": "Pupuk organik cair dengan mikroba dan asam amino untuk membantu memperbaiki tanah dan mempercepat pembungaan.",
+    "shape": "bottle",
+    "tag1": "POC",
+    "tag2": "Hayati"
+  },
+  {
+    "id": "p6",
+    "name": "Benih Cabai Rawit Ori 212 (10 g)",
+    "slug": "benih-cabai-rawit-ori-212",
+    "category": "bibit",
+    "price": 95000,
+    "isBestSeller": true,
+    "description": "Benih cabai rawit berbuah lebat dan toleran terhadap layu bakteri dan antraknosa.",
+    "shape": "packet",
+    "tag1": "Ori",
+    "tag2": "212"
+  },
+  {
+    "id": "p7",
+    "name": "Fungisida Dithane M-45 (1 kg)",
+    "slug": "fungisida-dithane-m-45",
+    "category": "pestisida",
+    "price": 135000,
+    "isBestSeller": false,
+    "description": "Fungisida kontak untuk melindungi cabai, bawang, dan kentang dari busuk daun dan bercak daun.",
+    "shape": "packet",
+    "tag1": "M-45",
+    "tag2": "Fungisida"
+  },
+  {
+    "id": "p8",
+    "name": "Selang Drip Irigasi Tetes 100 m",
+    "slug": "selang-drip-irigasi-100m",
+    "category": "alat-pertanian",
+    "price": 165000,
+    "isBestSeller": false,
+    "description": "Selang tetes tahan sinar UV untuk pengairan hemat air pada semangka, melon, cabai, dan bawang merah.",
+    "shape": "roll",
+    "tag1": "",
+    "tag2": ""
+  }
+]
