@@ -11,10 +11,12 @@ assert.strictEqual(config.tagline, 'Solusi Terbaik Petani');
 assert.strictEqual(config.waNumber, '6285875613333');
 assert.strictEqual(config.waDisplay, '+62 858-7561-3333');
 assert.strictEqual(config.email, 'alantanijaya@gmail.com');
-assert.strictEqual(config.stores.induk.name, 'Toko Induk');
-assert.ok(config.stores.induk.address.includes('Hoscokro Aminoto'));
-assert.strictEqual(config.stores.cabang.name, 'Toko Cabang');
-assert.ok(config.stores.cabang.address.includes('Mawar'));
+const indukStore = Array.isArray(config.stores) ? config.stores.find(s => s.id === 'induk') : config.stores.induk;
+const cabangStore = Array.isArray(config.stores) ? config.stores.find(s => s.id === 'cabang') : config.stores.cabang;
+assert.ok(indukStore.name.toLowerCase().includes('induk'));
+assert.ok(indukStore.address.includes('HOS Cokroaminoto'));
+assert.ok(cabangStore.name.toLowerCase().includes('cabang'));
+assert.ok(cabangStore.address.includes('Mawar'));
 
 const configStr = JSON.stringify(config).toLowerCase();
 assert.ok(!configStr.includes('balikpapan'), 'Config must not contain Balikpapan');

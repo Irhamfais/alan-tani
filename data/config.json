@@ -2,27 +2,28 @@
   "storeName": "Alan Tani Jaya",
   "tagline": "Solusi Terbaik Petani",
   "established": "2020",
+  "whatsapp": "6285875613333",
+  "whatsappDisplay": "+62 858-7561-3333",
   "waNumber": "6285875613333",
   "waDisplay": "+62 858-7561-3333",
   "email": "alantanijaya@gmail.com",
+  "hours": "Senin sampai Minggu, 07.00 sampai 16.00 WIB",
   "operatingHours": "Senin sampai Minggu, 07.00 sampai 16.00 WIB",
   "operatingHoursShort": "07.00 - 16.00 WIB",
-  "stores": {
-    "induk": {
+  "stores": [
+    {
       "id": "induk",
-      "name": "Toko Induk",
-      "address": "Jl. Hoscokro Aminoto, Tanggul Kulon, Kec. Tanggul, Kab. Jember",
-      "mapUrl": "https://share.google/os4Ak9UN3mJQ9AGzL",
-      "mapsAppUrl": "https://maps.app.goo.gl/os4Ak9UN3mJQ9AGzL"
+      "name": "Toko induk",
+      "address": "Jl. HOS Cokroaminoto, Tanggul Kulon, Tanggul, Jember, Jawa Timur",
+      "mapsUrl": "https://share.google/os4Ak9UN3mJQ9AGzL"
     },
-    "cabang": {
+    {
       "id": "cabang",
-      "name": "Toko Cabang",
+      "name": "Toko cabang",
       "address": "Jl. Mawar (Pasar Tanggul), Tanggul, Jember, Jawa Timur",
-      "mapUrl": "https://share.google/1ZGzgLxBJCIZ7WLDJ",
-      "mapsAppUrl": "https://maps.app.goo.gl/1ZGzgLxBJCIZ7WLDJ"
+      "mapsUrl": "https://share.google/1ZGzgLxBJCIZ7WLDJ"
     }
-  },
+  ],
   "marketplace": {
     "shopee": "https://shopee.co.id/",
     "tokopedia": "https://www.tokopedia.com/",

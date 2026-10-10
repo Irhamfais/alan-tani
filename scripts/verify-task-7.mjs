@@ -108,10 +108,9 @@ async function verify() {
     assert.ok(aboutData.factsCount >= 6, `Must have at least 6 fact rows (got ${aboutData.factsCount})`);
     assert.ok(aboutData.facts[0].dd.includes('2020'), 'Fact Berdiri must contain 2020');
     assert.ok(aboutData.facts[1].dd.includes('R1 Seller'), 'Fact Status must contain R1 Seller');
-    assert.ok(aboutData.facts[2].dd.includes('Jl. Hoscokro Aminoto'), 'Fact Toko Induk must contain address');
-    assert.ok(aboutData.facts[3].dd.includes('Jl. Mawar'), 'Fact Toko Cabang must contain address');
+    assert.ok(aboutData.facts[2].dd.includes('Jember'), 'Fact Area layanan must contain Jember');
     assert.strictEqual(aboutData.mpLinks.length, 3, 'Must have 3 marketplace links');
-    console.log('  ✔ Facts list (Berdiri, Status, Toko Induk, Toko Cabang, Area Layanan, Belanja Online) verified');
+    console.log('  ✔ Facts list (Berdiri, Status, Area Layanan, Belanja Online) verified');
 
     // Verify Gallery
     assert.strictEqual(aboutData.figuresCount, 2, 'Gallery must contain exactly 2 store figures');

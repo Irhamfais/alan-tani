@@ -1,8 +1,8 @@
 import React from 'react';
-import { Award } from 'lucide-react';
+import { Award, MapPin } from 'lucide-react';
 import config from '@/data/config.json';
 
-function Shop1Art() {
+export function Shop1Art() {
   const stripes = [];
   for (let i = 0; i < 12; i++) {
     stripes.push(
@@ -43,7 +43,7 @@ function Shop1Art() {
         x="320"
         y="81"
         textAnchor="middle"
-        fontFamily="Bricolage Grotesque, sans-serif"
+        fontFamily="var(--font-display), Bricolage Grotesque, sans-serif"
         fontWeight="700"
         fontSize="20"
         fill="#2BD66F"
@@ -54,7 +54,7 @@ function Shop1Art() {
   );
 }
 
-function Shop2Art() {
+export function Shop2Art() {
   const lines = [];
   for (let i = 0; i < 6; i++) {
     lines.push(
@@ -96,7 +96,7 @@ function Shop2Art() {
         x="320"
         y="117"
         textAnchor="middle"
-        fontFamily="Bricolage Grotesque, sans-serif"
+        fontFamily="var(--font-display), Bricolage Grotesque, sans-serif"
         fontWeight="700"
         fontSize="17"
         fill="#2BD66F"
@@ -108,6 +108,9 @@ function Shop2Art() {
 }
 
 export default function AboutSection() {
+  const storeInduk = config.stores[0];
+  const storeCabang = config.stores[1];
+
   return (
     <section className="section" id="tentang" aria-labelledby="tentangTitle">
       <div className="container">
@@ -139,14 +142,6 @@ export default function AboutSection() {
               <dd>
                 R1 Seller<span>Keaslian produk terjamin</span>
               </dd>
-            </div>
-            <div className="fact">
-              <dt>Toko induk</dt>
-              <dd>{config.stores.induk.address}</dd>
-            </div>
-            <div className="fact">
-              <dt>Toko cabang</dt>
-              <dd>{config.stores.cabang.address}</dd>
             </div>
             <div className="fact">
               <dt>Area layanan</dt>
@@ -205,18 +200,44 @@ export default function AboutSection() {
           <figure>
             <Shop1Art />
             <figcaption>
-              <strong>Toko induk</strong>
-              <span>Jl. Hoscokro Aminoto, Tanggul Kulon. Foto asli menyusul.</span>
+              <div>
+                <strong>{storeInduk.name}</strong>
+                <span>{storeInduk.address}</span>
+              </div>
+              <a
+                className="btn btn-ghost btn-sm"
+                href={storeInduk.mapsUrl}
+                target="_blank"
+                rel="noopener"
+              >
+                <MapPin size={18} aria-hidden="true" />
+                Rute ke toko induk
+              </a>
             </figcaption>
           </figure>
           <figure>
             <Shop2Art />
             <figcaption>
-              <strong>Toko cabang</strong>
-              <span>Jl. Mawar (Pasar Tanggul), Tanggul. Foto asli menyusul.</span>
+              <div>
+                <strong>{storeCabang.name}</strong>
+                <span>{storeCabang.address}</span>
+              </div>
+              <a
+                className="btn btn-ghost btn-sm"
+                href={storeCabang.mapsUrl}
+                target="_blank"
+                rel="noopener"
+              >
+                <MapPin size={18} aria-hidden="true" />
+                Rute ke toko cabang
+              </a>
             </figcaption>
           </figure>
         </div>
+        <p className="note">
+          Ilustrasi toko bersifat sementara. Foto asli dari owner dipasang saat
+          implementasi.
+        </p>
 
         <div className="certs-head">
           <h3>Sertifikasi dan penghargaan</h3>
@@ -254,3 +275,5 @@ export default function AboutSection() {
     </section>
   );
 }
+
+export { AboutSection as About };

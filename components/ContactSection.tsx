@@ -1,173 +1,113 @@
-import { MapPin, Clock, MessageCircle, Mail, Users, Truck } from 'lucide-react';
-import { config } from '@/lib/data';
+import React from 'react';
+import { MapPin, Clock, Mail, Users } from 'lucide-react';
+import config from '@/data/config.json';
+import { waLink } from '@/lib/utils/whatsapp';
+
+function WhatsAppIcon({ size = 22 }: { size?: number }) {
+  return (
+    <svg
+      aria-hidden="true"
+      width={size}
+      height={size}
+      viewBox="0 0 24 24"
+      fill="currentColor"
+    >
+      <path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946C.16 5.335 5.495 0 12.05 0a11.82 11.82 0 0 1 8.413 3.488 11.82 11.82 0 0 1 3.48 8.414c-.003 6.557-5.338 11.892-11.893 11.892a11.9 11.9 0 0 1-5.688-1.448L.057 24zm6.597-3.807c1.676.995 3.276 1.591 5.316 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.818-.983zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.5-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z" />
+    </svg>
+  );
+}
 
 export default function ContactSection() {
-  const waUrl = `https://wa.me/${config.waNumber}?text=${encodeURIComponent(
-    'Halo, saya ingin bertanya tentang produk pertanian'
-  )}`;
+  const storeInduk = config.stores[0];
+  const storeCabang = config.stores[1];
+  const waContactUrl = waLink();
 
   return (
     <section className="section" id="kontak" aria-labelledby="kontakTitle">
-      <div className="container contact">
-        <div className="map">
-          <svg
-            viewBox="0 0 640 420"
-            role="img"
-            aria-label="Ilustrasi peta lokasi Alan Tani di Tanggul, Jember"
-            xmlns="http://www.w3.org/2000/svg"
-            id="mapArt"
-          >
-            <defs>
-              <linearGradient id="mg" x1="0" y1="0" x2="1" y2="1">
-                <stop offset="0" stopColor="#0E4A37" />
-                <stop offset="1" stopColor="#0A3D2D" />
-              </linearGradient>
-            </defs>
-            <rect width="640" height="420" fill="url(#mg)" />
-            <g fill="none" stroke="#0F5A41" strokeLinecap="round">
-              <path d="M-10 300C120 270 200 210 330 210S520 120 660 100" strokeWidth="16" />
-              <path d="M200 -10C220 90 300 130 330 210S380 360 360 430" strokeWidth="12" />
-              <path d="M-10 120C100 130 180 90 260 40" strokeWidth="8" />
-              <path d="M420 430C450 330 540 290 660 300" strokeWidth="8" />
-            </g>
-            <g fill="none" stroke="#14694B" strokeWidth="2">
-              <path d="M0 60H640M0 180H640M0 340H640M100 0V420M460 0V420" />
-            </g>
-            <path
-              d="M330 150a26 26 0 0 1 26 26c0 26-26 56-26 56s-26-30-26-56a26 26 0 0 1 26-26Z"
-              fill="#2BD66F"
-            />
-            <circle cx="330" cy="176" r="9" fill="#03180F" />
-            <text
-              x="330"
-              y="262"
-              textAnchor="middle"
-              fontFamily="var(--font-display, 'Bricolage Grotesque', sans-serif)"
-              fontWeight="600"
-              fontSize="20"
-              fill="#EAF6EF"
-            >
-              Tanggul
-            </text>
-          </svg>
-          <div className="stores">
-            <a
-              className="btn btn-ghost btn-sm"
-              href={config.stores.induk.mapUrl}
-              target="_blank"
-              rel="noopener"
-            >
-              <MapPin className="w-[18px] h-[18px]" aria-hidden="true" />
-              Rute ke toko induk
-            </a>
-            <a
-              className="btn btn-ghost btn-sm"
-              href={config.stores.cabang.mapUrl}
-              target="_blank"
-              rel="noopener"
-            >
-              <MapPin className="w-[18px] h-[18px]" aria-hidden="true" />
-              Rute ke toko cabang
-            </a>
-          </div>
-          <p className="note">Peta di atas ilustrasi. Embed Google Maps dipasang saat implementasi.</p>
-        </div>
-
-        <div>
+      <div className="container">
+        <div className="contact-head">
           <h2 id="kontakTitle">Ada pertanyaan? Hubungi kami</h2>
-          <div className="rows">
-            <div className="row">
-              <MapPin aria-hidden="true" />
-              <div>
-                <strong>Toko induk</strong>
-                <span>{config.stores.induk.address}</span>
-              </div>
+        </div>
+        <div className="rows">
+          <div className="row">
+            <MapPin size={22} aria-hidden="true" />
+            <div>
+              <strong>{storeInduk.name}</strong>
+              <span>{storeInduk.address}</span>
             </div>
-            <div className="row">
-              <MapPin aria-hidden="true" />
-              <div>
-                <strong>Toko cabang</strong>
-                <span>{config.stores.cabang.address}</span>
-              </div>
+          </div>
+          <div className="row">
+            <MapPin size={22} aria-hidden="true" />
+            <div>
+              <strong>{storeCabang.name}</strong>
+              <span>{storeCabang.address}</span>
             </div>
-            <div className="row">
-              <Clock aria-hidden="true" />
-              <div>
-                <strong>Jam operasional</strong>
-                <span>{config.operatingHours}</span>
-              </div>
+          </div>
+          <div className="row">
+            <Clock size={22} aria-hidden="true" />
+            <div>
+              <strong>Jam operasional</strong>
+              <span>{config.hours}</span>
             </div>
-            <div className="row">
-              <MessageCircle aria-hidden="true" />
-              <div>
-                <strong>WhatsApp</strong>
+          </div>
+          <div className="row">
+            <WhatsAppIcon size={22} />
+            <div>
+              <strong>WhatsApp</strong>
+              <a
+                className="text-link"
+                href={waContactUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                data-wa
+                data-wa-loc="kontak-nomor"
+                id="waDisplay"
+              >
+                {config.whatsappDisplay}
+              </a>
+            </div>
+          </div>
+          <div className="row">
+            <Mail size={22} aria-hidden="true" />
+            <div>
+              <strong>Email</strong>
+              <a className="text-link" href={`mailto:${config.email}`} data-email>
+                {config.email}
+              </a>
+            </div>
+          </div>
+          <div className="row">
+            <Users size={22} aria-hidden="true" />
+            <div>
+              <strong>Media sosial</strong>
+              <span>
                 <a
                   className="text-link"
-                  href={waUrl}
+                  href={config.social.facebook}
                   target="_blank"
-                  rel="noopener"
-                  id="waDisplay"
+                  rel="noopener noreferrer"
+                  data-social="facebook"
                 >
-                  {config.waDisplay}
+                  Facebook: Alan Tani Jaya
                 </a>
-              </div>
-            </div>
-            <div className="row">
-              <Mail aria-hidden="true" />
-              <div>
-                <strong>Email</strong>
-                <a className="text-link" href={`mailto:${config.email}`}>
-                  {config.email}
+              </span>
+              <span>
+                <a
+                  className="text-link"
+                  href={config.social.tiktok}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  data-social="tiktok"
+                >
+                  TikTok: Alan Tani Jaya
                 </a>
-              </div>
+              </span>
             </div>
-            <div className="row">
-              <Users aria-hidden="true" />
-              <div>
-                <strong>Media sosial</strong>
-                <span>
-                  <a
-                    className="text-link"
-                    href={config.social.facebook}
-                    target="_blank"
-                    rel="noopener"
-                  >
-                    Facebook: Alan Tani Jaya
-                  </a>
-                </span>
-                <span>
-                  <a
-                    className="text-link"
-                    href={config.social.tiktok}
-                    target="_blank"
-                    rel="noopener"
-                  >
-                    TikTok: Alan Tani Jaya
-                  </a>
-                </span>
-              </div>
-            </div>
-            <div className="row">
-              <Truck aria-hidden="true" />
-              <div>
-                <strong>Pengiriman</strong>
-                <span>Jember, Jawa Timur, dan seluruh Indonesia.</span>
-              </div>
-            </div>
-          </div>
-          <div className="contact-cta">
-            <a
-              className="btn btn-primary"
-              href={waUrl}
-              target="_blank"
-              rel="noopener"
-            >
-              <MessageCircle aria-hidden="true" />
-              Chat WhatsApp
-            </a>
           </div>
         </div>
       </div>
     </section>
   );
 }
+
+export { ContactSection as Contact };

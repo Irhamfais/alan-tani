@@ -2,7 +2,8 @@ export interface StoreLocation {
   id: string;
   name: string;
   address: string;
-  mapUrl: string;
+  mapsUrl: string;
+  mapUrl?: string;
   mapsAppUrl?: string;
 }
 
@@ -10,15 +11,15 @@ export interface AppConfig {
   storeName: string;
   tagline: string;
   established: string;
+  whatsapp?: string;
+  whatsappDisplay?: string;
   waNumber: string;
   waDisplay: string;
   email: string;
+  hours?: string;
   operatingHours: string;
   operatingHoursShort: string;
-  stores: {
-    induk: StoreLocation;
-    cabang: StoreLocation;
-  };
+  stores: StoreLocation[];
   marketplace: {
     shopee: string;
     tokopedia: string;

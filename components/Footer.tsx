@@ -55,11 +55,11 @@ export default function Footer() {
             <ul>
               <li>
                 <strong style={{ color: 'var(--text)', fontWeight: 600 }}>Toko induk:</strong>{' '}
-                {config.stores.induk.address}
+                {config.stores[0].address}
               </li>
               <li>
                 <strong style={{ color: 'var(--text)', fontWeight: 600 }}>Toko cabang:</strong>{' '}
-                {config.stores.cabang.address}
+                {config.stores[1].address}
               </li>
               <li>{config.operatingHours}</li>
               <li>
