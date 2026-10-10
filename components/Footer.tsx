@@ -1,172 +1,106 @@
-import Link from 'next/link';
 import Image from 'next/image';
-
-const CONFIG = {
-  waNumber: "6285875613333",
-  waDisplay: "+62 858-7561-3333",
-  email: "alantanijaya@gmail.com",
-  marketplace: {
-    shopee: "https://shopee.co.id/",
-    tokopedia: "https://www.tokopedia.com/",
-    tiktokshop: "https://www.tiktok.com/"
-  },
-  social: {
-    facebook: "https://www.facebook.com/",
-    tiktok: "https://www.tiktok.com/"
-  },
-  maps: {
-    induk: "https://share.google/os4Ak9UN3mJQ9AGzL",
-    cabang: "https://share.google/1ZGzgLxBJCIZ7WLDJ"
-  }
-};
+import Link from 'next/link';
+import logoAlanTani from '@/public/logo-alan-tani-jaya.png';
+import { config } from '@/lib/data';
 
 export default function Footer() {
+  const waUrl = `https://wa.me/${config.waNumber}?text=${encodeURIComponent(
+    'Halo, saya ingin bertanya tentang produk pertanian'
+  )}`;
+
   return (
-    <footer className="site-footer bg-[var(--bg-deep)] py-16 md:py-24 text-[var(--text-2)]">
-      <div className="container mx-auto px-5">
-        <div className="footer-grid grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10">
-          {/* Brand Column */}
+    <footer className="site-footer">
+      <div className="container">
+        <div className="footer-grid">
+          {/* Kolom 1: Brand & Logo */}
           <div className="footer-brand">
-            <Image
-              src="/logo-alan-tani-jaya.png"
-              alt="Alan Tani Jaya"
-              width={150}
-              height={150}
-              className="logo h-[150px] w-auto mb-4"
-            />
-            <p className="mt-4 max-w-[36ch]">
-              Menyediakan produk pertanian berkualitas untuk mendukung kesuksesan petani Indonesia. R1 Seller terpercaya di Jember.
+            <Link className="brand" href="#home" aria-label="Beranda Alan Tani Jaya">
+              <Image
+                className="logo"
+                src={logoAlanTani}
+                alt="Alan Tani Jaya, Pertanian"
+                style={{ height: '150px', width: 'auto' }}
+              />
+            </Link>
+            <p>
+              Solusi Terbaik Petani. R1 Seller dengan keaslian produk terjamin, pengiriman cepat, dan pelayanan ramah.
             </p>
           </div>
 
-          {/* Halaman Column */}
+          {/* Kolom 2: Halaman */}
           <div>
-            <h3 className="text-base text-[var(--text)] mb-3 font-semibold">Halaman</h3>
+            <h3>Halaman</h3>
             <ul>
-              <li className="py-[0.3rem]">
-                <Link href="#home" className="inline-block transition-colors hover:text-[var(--accent)]">
-                  Home
-                </Link>
+              <li>
+                <a href="#home">Home</a>
               </li>
-              <li className="py-[0.3rem]">
-                <Link href="#products" className="inline-block transition-colors hover:text-[var(--accent)]">
-                  Produk
-                </Link>
+              <li>
+                <a href="#produk">Produk</a>
               </li>
-              <li className="py-[0.3rem]">
-                <Link href="#artikel" className="inline-block transition-colors hover:text-[var(--accent)]">
-                  Artikel
-                </Link>
+              <li>
+                <a href="#artikel">Artikel</a>
               </li>
-              <li className="py-[0.3rem]">
-                <Link href="#tentang" className="inline-block transition-colors hover:text-[var(--accent)]">
-                  Tentang Kami
-                </Link>
+              <li>
+                <a href="#tentang">Tentang Kami</a>
               </li>
-              <li className="py-[0.3rem]">
-                <Link href="#kontak" className="inline-block transition-colors hover:text-[var(--accent)]">
-                  Kontak
-                </Link>
+              <li>
+                <a href="#kontak">Kontak</a>
               </li>
             </ul>
           </div>
 
-          {/* Kontak Column */}
+          {/* Kolom 3: Kontak */}
           <div>
-            <h3 className="text-base text-[var(--text)] mb-3 font-semibold">Kontak</h3>
+            <h3>Kontak</h3>
             <ul>
-              <li className="py-[0.3rem]">
-                <a 
-                  href={`https://wa.me/${CONFIG.waNumber}`}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="inline-block transition-colors hover:text-[var(--accent)]"
-                >
-                  WA: {CONFIG.waDisplay}
+              <li>
+                <strong style={{ color: 'var(--text)', fontWeight: 600 }}>Toko induk:</strong>{' '}
+                {config.stores.induk.address}
+              </li>
+              <li>
+                <strong style={{ color: 'var(--text)', fontWeight: 600 }}>Toko cabang:</strong>{' '}
+                {config.stores.cabang.address}
+              </li>
+              <li>{config.operatingHours}</li>
+              <li>
+                <a href={waUrl} target="_blank" rel="noopener" data-wa data-wa-loc="footer">
+                  Chat WhatsApp
                 </a>
               </li>
-              <li className="py-[0.3rem]">
-                <a 
-                  href={`mailto:${CONFIG.email}`}
-                  className="inline-block transition-colors hover:text-[var(--accent)]"
-                >
-                  {CONFIG.email}
-                </a>
-              </li>
-              <li className="py-[0.3rem]">
-                <a 
-                  href={CONFIG.maps.induk}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="inline-block transition-colors hover:text-[var(--accent)]"
-                >
-                  Toko Induk: Tanggul Kulon
-                </a>
-              </li>
-              <li className="py-[0.3rem]">
-                <a 
-                  href={CONFIG.maps.cabang}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="inline-block transition-colors hover:text-[var(--accent)]"
-                >
-                  Toko Cabang: Pasar Tanggul
+              <li>
+                <a href={`mailto:${config.email}`} data-email>
+                  {config.email}
                 </a>
               </li>
             </ul>
           </div>
 
-          {/* Marketplace dan Sosial Column */}
+          {/* Kolom 4: Marketplace dan sosial */}
           <div>
-            <h3 className="text-base text-[var(--text)] mb-3 font-semibold">Marketplace dan sosial</h3>
+            <h3>Marketplace dan sosial</h3>
             <ul>
-              <li className="py-[0.3rem]">
-                <a 
-                  href={CONFIG.marketplace.shopee}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="inline-block transition-colors hover:text-[var(--accent)]"
-                >
+              <li>
+                <a href={config.marketplace.shopee} target="_blank" rel="noopener" data-mp="shopee">
                   Shopee
                 </a>
               </li>
-              <li className="py-[0.3rem]">
-                <a 
-                  href={CONFIG.marketplace.tokopedia}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="inline-block transition-colors hover:text-[var(--accent)]"
-                >
+              <li>
+                <a href={config.marketplace.tokopedia} target="_blank" rel="noopener" data-mp="tokopedia">
                   Tokopedia
                 </a>
               </li>
-              <li className="py-[0.3rem]">
-                <a 
-                  href={CONFIG.marketplace.tiktokshop}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="inline-block transition-colors hover:text-[var(--accent)]"
-                >
+              <li>
+                <a href={config.marketplace.tiktokshop} target="_blank" rel="noopener" data-mp="tiktokshop">
                   TikTok Shop
                 </a>
               </li>
-              <li className="py-[0.3rem]">
-                <a 
-                  href={CONFIG.social.facebook}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="inline-block transition-colors hover:text-[var(--accent)]"
-                >
+              <li>
+                <a href={config.social.facebook} target="_blank" rel="noopener" data-social="facebook">
                   Facebook
                 </a>
               </li>
-              <li className="py-[0.3rem]">
-                <a 
-                  href={CONFIG.social.tiktok}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="inline-block transition-colors hover:text-[var(--accent)]"
-                >
+              <li>
+                <a href={config.social.tiktok} target="_blank" rel="noopener" data-social="tiktok">
                   TikTok
                 </a>
               </li>
@@ -174,10 +108,7 @@ export default function Footer() {
           </div>
         </div>
 
-        {/* Copyright */}
-        <div className="copyright mt-12 pt-6 border-t border-[var(--line)] text-sm text-[var(--text-3)]">
-          <p>&copy; {new Date().getFullYear()} Alan Tani Jaya. Seluruh hak cipta dilindungi undang-undang.</p>
-        </div>
+        <p className="copyright">&copy; 2026 Alan Tani</p>
       </div>
     </footer>
   );

@@ -1116,6 +1116,17 @@ dialog::backdrop {
   margin-top: 1.25rem;
 }
 
+.stores {
+  display: flex;
+  flex-wrap: wrap;
+  gap: .75rem;
+  margin-top: 1.25rem;
+}
+
+.stores .btn {
+  margin-top: 0;
+}
+
 .rows {
   display: grid;
   margin-top: 1.5rem;

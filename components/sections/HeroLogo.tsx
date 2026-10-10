@@ -2,6 +2,7 @@
 
 import { useEffect, useRef } from 'react';
 import Image from 'next/image';
+import logoHero from '@/public/brand/logo-hero.png';
 
 export default function HeroLogo() {
   const parallaxRef = useRef<HTMLDivElement>(null);
@@ -106,10 +107,8 @@ export default function HeroLogo() {
       <div className="parallax" ref={parallaxRef}>
         <div className="bob">
           <Image
-            src="/brand/logo-hero.png"
+            src={logoHero}
             alt=""
-            width={1097}
-            height={1005}
             sizes="300px"
             loading="lazy"
           />

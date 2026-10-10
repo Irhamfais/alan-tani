@@ -3,6 +3,7 @@
 import { useState, useEffect, useRef } from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
+import logoAlanTani from '@/public/logo-alan-tani-jaya.png';
 import config from '@/data/config.json';
 import { waLink } from '@/lib/utils/whatsapp';
 
@@ -93,10 +94,8 @@ export default function Header() {
       <div className="container bar">
         <Link href="#home" className="brand" aria-label="Beranda Alan Tani Jaya" onClick={() => handleNavClick('home')}>
           <Image
-            src="/logo-alan-tani-jaya.png"
+            src={logoAlanTani}
             alt="Alan Tani Jaya"
-            width={100}
-            height={100}
             className="logo"
             priority
           />
