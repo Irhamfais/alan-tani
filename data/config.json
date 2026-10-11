@@ -14,24 +14,24 @@
     {
       "id": "induk",
       "name": "Toko induk",
-      "address": "Jl. HOS Cokroaminoto, Tanggul Kulon, Tanggul, Jember, Jawa Timur",
-      "mapsUrl": "https://share.google/os4Ak9UN3mJQ9AGzL"
+      "address": "Jl. Urip Sumoharjo No.74, Tekoan, Tanggul Kulon, Kec. Tanggul, Kabupaten Jember, Jawa Timur",
+      "mapsUrl": "https://maps.app.goo.gl/6cgLTqpmjc5grXzj7"
     },
     {
       "id": "cabang",
       "name": "Toko cabang",
-      "address": "Jl. Mawar (Pasar Tanggul), Tanggul, Jember, Jawa Timur",
-      "mapsUrl": "https://share.google/1ZGzgLxBJCIZ7WLDJ"
+      "address": "Jl. Mawar (pasar, Tekoan, Tanggul Kulon, Kec. Tanggul, Kabupaten Jember, Jawa Timur",
+      "mapsUrl": "https://maps.app.goo.gl/AdLX6aMTjcr6WE9F8"
     }
   ],
   "marketplace": {
-    "shopee": "https://shopee.co.id/",
-    "tokopedia": "https://www.tokopedia.com/",
-    "tiktokshop": "https://www.tiktok.com/"
+    "shopee": "https://id.shp.ee/dV7k4xpw",
+    "tokopedia": "https://tk.tokopedia.com/ZSbvbXWvK/",
+    "tiktokshop": "https://vt.tiktok.com/ZS9DwLMo7FqjX-9B5Xl/"
   },
   "social": {
-    "facebook": "https://www.facebook.com/",
-    "tiktok": "https://www.tiktok.com/"
+    "facebook": "https://www.facebook.com/share/1M2eu3MR8o/?mibextid=wwXIfr",
+    "tiktok": "https://www.tiktok.com/@alantanijaya?_r=1&_t=ZS-9ASIsDzzIvs"
   },
   "coverage": {
     "lokal": "Jember",
