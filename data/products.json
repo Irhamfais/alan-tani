@@ -46,5 +46,53 @@
     "shape": "bottle",
     "tag1": "Solusi",
     "tag2": "865 SL"
+  },
+  {
+    "id": "p5",
+    "name": "Pupuk Organik Powersoil Asam Humat (1 kg)",
+    "slug": "pupuk-organik-powersoil-asam-humat",
+    "category": "pupuk",
+    "isBestSeller": false,
+    "description": "Pupuk organik asam humat 52 sampai 60% yang larut dalam air. Berfungsi sebagai pembenah tanah organik untuk meningkatkan kesuburan dan struktur tanah serta menunjang kualitas pertumbuhan tanaman. Bisa disiram, disemprot, atau ditabur.",
+    "image": "/images/products/pupuk-organik-powersoil-asam-humat.jpg",
+    "shape": "sack",
+    "tag1": "Humat",
+    "tag2": "Powersoil"
+  },
+  {
+    "id": "p6",
+    "name": "Pupuk Cair King Booster (5 liter)",
+    "slug": "pupuk-cair-king-booster",
+    "category": "pupuk",
+    "isBestSeller": false,
+    "description": "Hormon tanaman plus GA3 (125 SL) dan ZPT SNP (12,00 SL). Perpaduan dua ZPT berkonsentrasi tinggi sebagai regulator dan aktivator untuk merangsang dan mempercepat pertumbuhan akar, batang, ranting, daun, bunga, dan buah.",
+    "image": "/images/products/pupuk-cair-king-booster.jpg",
+    "shape": "bottle",
+    "tag1": "King",
+    "tag2": "Booster"
+  },
+  {
+    "id": "p7",
+    "name": "Pupuk Mano Hara Calbor (1 kg)",
+    "slug": "pupuk-mano-hara-calbor",
+    "category": "pupuk",
+    "isBestSeller": false,
+    "description": "Pupuk kalsium boron (Calbor) mesh 2500 dengan kandungan Zn 3,95%, CaCO3 96,11%, MgO 0,95%, kadar air 0,05%, ditambah boron 6,88%. Cocok untuk tanaman sayur dan buah seperti bawang merah, cabai, tomat, dan kentang.",
+    "image": "/images/products/pupuk-mano-hara-calbor.jpg",
+    "shape": "packet",
+    "tag1": "Calbor",
+    "tag2": "Mano Hara"
+  },
+  {
+    "id": "p8",
+    "name": "Benih Jagung Hibrida Raja R7 Ultimate (1 kg)",
+    "slug": "benih-jagung-hibrida-raja-r7-ultimate",
+    "category": "bibit",
+    "isBestSeller": false,
+    "description": "Benih unggul jagung hibrida untuk membantu petani mendapatkan hasil panen jagung yang lebih optimal.",
+    "image": "/images/products/benih-jagung-hibrida-raja-r7-ultimate.jpg",
+    "shape": "packet",
+    "tag1": "R7",
+    "tag2": "Ultimate"
   }
 ]
