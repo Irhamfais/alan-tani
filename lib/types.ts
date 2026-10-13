@@ -53,9 +53,12 @@ export interface Product {
   name: string;
   slug: string;
   category: ProductCategory;
-  price: number;
+  /** Not displayed: visitors ask for prices over WhatsApp. Kept optional for future use. */
+  price?: number;
   isBestSeller: boolean;
   description: string;
+  /** Product photo under /public (square). Falls back to the SVG illustration (`shape`) when absent. */
+  image?: string;
   shape: ProductShape;
   tag1: string;
   tag2: string;

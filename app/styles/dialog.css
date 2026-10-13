@@ -36,11 +36,56 @@ dialog::backdrop {
   padding-top: .5rem;
 }
 
-.dlg .art svg,
-.dlg .art img {
+.dlg .art > svg {
   height: 100%;
   width: auto;
   max-width: 100%;
+}
+
+/* Photo variant: photo and zoom button share one grid cell sized to the photo */
+.dlg .art:has(> .photo) {
+  height: auto;
+  grid-template-columns: auto;
+  justify-content: center;
+  padding: 1.25rem 1.25rem 0;
+}
+
+.dlg .art:has(> .photo) > * {
+  grid-area: 1 / 1;
+}
+
+.dlg .photo {
+  height: clamp(200px, 34dvh, 300px);
+  border-radius: 16px;
+}
+
+.photo-zoom {
+  z-index: 1;
+  align-self: end;
+  justify-self: end;
+  margin: .6rem;
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  display: grid;
+  place-items: center;
+  color: var(--text);
+  background: rgba(3, 26, 19, .72);
+  -webkit-backdrop-filter: blur(4px);
+  backdrop-filter: blur(4px);
+  transition: background-color .2s, color .2s;
+}
+
+.photo-zoom:hover {
+  background: var(--accent);
+  color: var(--on-accent);
+}
+
+.dlg-body .dlg-ask {
+  font-size: .9375rem;
+  color: var(--text-3);
+  padding-left: .85rem;
+  border-left: 2px solid var(--accent);
 }
 
 .dlg-body {                                      /* hanya bagian ini yang boleh scroll */
@@ -56,10 +101,6 @@ dialog::backdrop {
 
 .dlg-body h2 {
   text-wrap: balance;
-}
-
-.dlg-body .price {
-  font-size: 1.6rem;
 }
 
 .dlg-body p {
@@ -103,9 +144,16 @@ dialog::backdrop {
     min-height: 420px;
     padding: 2rem;
   }
-  .dlg .art svg,
-  .dlg .art img {
+  .dlg .art > svg {
     width: min(100%, 290px);
+    height: auto;
+  }
+  .dlg .art:has(> .photo) {
+    grid-template-columns: minmax(0, 1fr);
+    padding: 2rem;
+  }
+  .dlg .photo {
+    width: 100%;
     height: auto;
   }
   .dlg-body {

@@ -1,10 +1,33 @@
+import Image from 'next/image';
 import { Product } from '@/lib/types';
 
 interface ProductArtProps {
   product: Product;
+  /** `card` for the catalog grid, `modal` for the detail dialog (larger image, descriptive alt). */
+  variant?: 'card' | 'modal';
 }
 
-export default function ProductArt({ product }: ProductArtProps) {
+const PHOTO_SIZES = {
+  card: '(min-width: 1040px) 280px, (min-width: 720px) 33vw, 50vw',
+  modal: '(min-width: 720px) 400px, 300px',
+} as const;
+
+export default function ProductArt({ product, variant = 'card' }: ProductArtProps) {
+  if (product.image) {
+    return (
+      <div className="photo">
+        <Image
+          src={product.image}
+          // In the card the product name sits right below, so the photo is decorative there.
+          alt={variant === 'modal' ? `Foto kemasan ${product.name}` : ''}
+          fill
+          sizes={PHOTO_SIZES[variant]}
+          quality={75}
+        />
+      </div>
+    );
+  }
+
   const g = 'g' + product.id;
   const g2 = 'h' + product.id;
 

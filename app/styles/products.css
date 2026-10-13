@@ -27,12 +27,6 @@
   font-weight: 700;
 }
 
-.chip small {
-  font-size: inherit;
-  opacity: .7;
-  margin-left: .3rem;
-}
-
 .grid-products {
   display: grid;
   gap: 1rem;
@@ -89,7 +83,7 @@
   background: radial-gradient(70% 55% at 50% 30%, rgba(43, 214, 111, .22), transparent 72%);
 }
 
-.art svg {
+.art > svg {
   width: 100%;
   height: auto;
 }
@@ -101,6 +95,59 @@
 
 .pcard .art {
   aspect-ratio: 1 / 1.08;
+}
+
+/* Product photo: a light "print" tile floating on the green glow */
+.photo {
+  position: relative;
+  aspect-ratio: 1;
+  border-radius: 14px;
+  overflow: hidden;
+  background: #F3F5F4;
+  box-shadow:
+    0 0 0 1px rgba(234, 246, 239, .08),
+    0 24px 44px -24px rgba(0, 0, 0, .8);
+  isolation: isolate;
+}
+
+.photo img {
+  object-fit: cover;
+  transition: transform .5s cubic-bezier(.2, .7, .2, 1);
+}
+
+.pcard .art:has(> .photo) {
+  aspect-ratio: auto;
+  padding: .75rem .75rem .25rem;
+}
+
+.pcard:hover .photo img {
+  transform: scale(1.045);
+}
+
+.pcard:has(.photo) .pcard-body {
+  padding-top: .6rem;
+}
+
+.pcard:has(.photo) .pcard-cat {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: .35rem .5rem;
+}
+
+.pcard-cat .badge--inline {
+  position: static;
+  font-size: .75rem;
+  padding: .3rem .55rem;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .photo img {
+    transition: none;
+  }
+  .pcard:hover .photo img {
+    transform: none;
+  }
 }
 
 .badge {
@@ -146,16 +193,46 @@
   padding-top: .75rem;
 }
 
-.price {
-  font-family: var(--font-display);
-  font-weight: 700;
-  font-size: 1.1rem;
-  color: var(--accent);
-}
-
-.pcard-foot .icon-btn {
+/* Sits above the card's stretched link so it opens WhatsApp, not the detail dialog */
+.pcard-ask {
   position: relative;
   z-index: 1;
+  width: 100%;
+  gap: .45rem;
+  padding-inline: .6rem;
+  font-size: .9375rem;
+  white-space: nowrap;
+  box-shadow: none;
+}
+
+@media (max-width: 479px) {
+  .pcard-ask {
+    font-size: .875rem;
+  }
+  .pcard-ask svg {
+    width: 16px;
+    height: 16px;
+  }
+}
+
+.pcard-ask:hover {
+  box-shadow: 0 0 28px -8px rgba(43, 214, 111, .6);
+}
+
+.catalog-empty {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem 1.5rem;
+  padding: 1.75rem;
+  border: 1px dashed rgba(234, 246, 239, .2);
+  border-radius: var(--radius);
+  color: var(--text-2);
+}
+
+.catalog-empty p {
+  max-width: 52ch;
 }
 
 .more {
