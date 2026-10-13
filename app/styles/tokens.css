@@ -1,0 +1,26 @@
+/* ---------- Tokens (Forest Dark Palette - taken from preview v5) ---------- */
+:root {
+  --bg:          #031A13;   /* page base, deepest forest */
+  --bg-alt:      #052A1F;   /* alternate sections */
+  --bg-deep:     #02120D;   /* footer */
+  --surface:     #0A3D2D;   /* the only "card" colour */
+  --surface-hi:  #0E4A37;
+  --canopy:      #0F5A41;   /* hero glow, labels inside illustrations */
+  --accent:      #2BD66F;   /* the one bright green (pill buttons) */
+  --accent-hi:   #4BE485;
+  --on-accent:   #03180F;
+  --text:        #EAF6EF;
+  --text-2:      #A9CBB8;   /* secondary, 9:1 on --bg */
+  --text-3:      #7FA690;   /* captions, >4.5:1 on --bg and --surface */
+  --line:        rgba(234, 246, 239, .12);
+
+  --font-display: var(--font-display-next, "Bricolage Grotesque", "Segoe UI", system-ui, sans-serif);
+  --font-body:    var(--font-body-next, "Figtree", "Segoe UI", system-ui, sans-serif);
+
+  --radius: 20px;
+  --header-h: 76px;
+
+  box-sizing: border-box;
+  padding-top: env(safe-area-inset-top, 0px);
+  padding-bottom: env(safe-area-inset-bottom, 0px);
+}

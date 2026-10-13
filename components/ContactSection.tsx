@@ -1,6 +1,6 @@
 import React from 'react';
 import { MapPin, Clock, Mail, Users } from 'lucide-react';
-import config from '@/data/config.json';
+import { config } from '@/lib/data';
 import { waLink } from '@/lib/utils/whatsapp';
 
 function WhatsAppIcon({ size = 22 }: { size?: number }) {
@@ -47,7 +47,7 @@ export default function ContactSection() {
             <Clock size={22} aria-hidden="true" />
             <div>
               <strong>Jam operasional</strong>
-              <span>{config.hours}</span>
+              <span>{config.operatingHours}</span>
             </div>
           </div>
           <div className="row">
@@ -63,7 +63,7 @@ export default function ContactSection() {
                 data-wa-loc="kontak-nomor"
                 id="waDisplay"
               >
-                {config.whatsappDisplay}
+                {config.waDisplay}
               </a>
             </div>
           </div>

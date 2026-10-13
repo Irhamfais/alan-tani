@@ -3,22 +3,22 @@ export interface StoreLocation {
   name: string;
   address: string;
   mapsUrl: string;
-  mapUrl?: string;
-  mapsAppUrl?: string;
 }
 
 export interface AppConfig {
   storeName: string;
   tagline: string;
   established: string;
-  whatsapp?: string;
-  whatsappDisplay?: string;
+  /** WhatsApp number in international format without "+", used for wa.me links. */
   waNumber: string;
+  /** Human-readable WhatsApp number shown on the page. */
   waDisplay: string;
   email: string;
-  hours?: string;
+  /** Opening hours as displayed to visitors. */
   operatingHours: string;
   operatingHoursShort: string;
+  /** Opening hours in schema.org `openingHours` format, used for JSON-LD. */
+  openingHoursSchema: string;
   stores: StoreLocation[];
   marketplace: {
     shopee: string;
@@ -34,7 +34,7 @@ export interface AppConfig {
     regional: string;
     nasional: string;
   };
-  heroPoints?: HeroPoint[];
+  heroPoints: HeroPoint[];
 }
 
 export interface HeroPoint {

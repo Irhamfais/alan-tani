@@ -1,7 +1,7 @@
 'use client';
 
 import { useEffect } from 'react';
-import { config } from '@/lib/data';
+import { waLink } from '@/lib/utils/whatsapp';
 
 /**
  * Helper to show toast notification matching preview v5 functionality
@@ -63,9 +63,7 @@ export default function FloatingWhatsApp() {
     }
   };
 
-  const waUrl = `https://wa.me/${config.waNumber}?text=${encodeURIComponent(
-    'Halo, saya ingin bertanya tentang produk pertanian'
-  )}`;
+  const waUrl = waLink();
 
   return (
     <>

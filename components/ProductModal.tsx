@@ -5,8 +5,7 @@ import { Product } from '@/lib/types';
 import ProductArt from './ProductArt';
 import formatRupiah from '@/lib/utils/format';
 import { waLink } from '@/lib/utils/whatsapp';
-import config from '@/data/config.json';
-import { CATEGORIES } from '@/lib/data';
+import { CATEGORIES, config } from '@/lib/data';
 
 interface ProductModalProps {
   product: Product | null;

@@ -1,0 +1,49 @@
+/* ---------- Footer ---------- */
+.site-footer {
+  background: var(--bg-deep);
+  padding-block: 4rem 6rem;
+  color: var(--text-2);
+}
+
+.footer-grid {
+  display: grid;
+  gap: 2.5rem;
+}
+
+.footer-grid h3 {
+  font-size: 1rem;
+  color: var(--text);
+  margin-bottom: .75rem;
+  font-weight: 600;
+}
+
+.footer-grid li {
+  padding-block: .3rem;
+}
+
+.footer-grid li a {
+  display: inline-block;
+}
+
+.footer-grid a:hover {
+  color: var(--accent);
+}
+
+.footer-brand p {
+  margin-top: 1rem;
+  max-width: 36ch;
+}
+
+.copyright {
+  margin-top: 3rem;
+  padding-top: 1.5rem;
+  border-top: 1px solid var(--line);
+  font-size: .875rem;
+  color: var(--text-3);
+}
+
+@media (min-width: 720px) {
+  .footer-grid {
+    grid-template-columns: 1.3fr .8fr 1.6fr 1fr;
+  }
+}

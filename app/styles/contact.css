@@ -1,0 +1,10 @@
+/* ---------- Contact ---------- */
+.contact-head { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 1.25rem 2rem; margin-bottom: 2rem; }
+.rows { display: grid; grid-template-columns: minmax(0, 1fr); border-bottom: 1px solid var(--line); }
+.row { display: flex; gap: 1rem; padding-block: 1.15rem; border-top: 1px solid var(--line); }
+.row > svg { width: 22px; height: 22px; flex: none; margin-top: .2rem; color: var(--accent); }
+.row strong { display: block; font-weight: 600; }
+.row span { color: var(--text-2); display: block; }
+@media (min-width: 900px) {
+  .rows { grid-template-columns: repeat(2, minmax(0, 1fr)); column-gap: clamp(2.5rem, 6vw, 5rem); }
+}

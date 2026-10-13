@@ -1,0 +1,71 @@
+/* ---------- Testimonials ---------- */
+.quotes {
+  display: grid;
+}
+
+.quote {
+  padding-block: 1.75rem;
+  border-top: 1px solid var(--line);
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.quote:first-child {
+  border-top: 0;
+  padding-top: 0;
+}
+
+.quote blockquote {
+  font-size: 1.15rem;
+  line-height: 1.55;
+}
+
+.quote figcaption, .quote .who {
+  display: flex;
+  align-items: center;
+  gap: .75rem;
+  margin-top: auto;
+}
+
+.avatar {
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  background: var(--surface);
+  color: var(--accent);
+  display: grid;
+  place-items: center;
+  font-family: var(--font-display);
+  font-weight: 700;
+  flex: none;
+}
+
+.who strong {
+  display: block;
+  font-weight: 600;
+  line-height: 1.3;
+}
+
+.who span {
+  color: var(--text-3);
+  font-size: .875rem;
+}
+
+@media (min-width: 900px) {
+  .quotes {
+    grid-template-columns: repeat(3, 1fr);
+  }
+  .quote {
+    padding: 0 2.25rem;
+    border-top: 0;
+    border-left: 1px solid var(--line);
+  }
+  .quote:first-child {
+    padding-left: 0;
+    border-left: 0;
+  }
+  .quote:last-child {
+    padding-right: 0;
+  }
+}

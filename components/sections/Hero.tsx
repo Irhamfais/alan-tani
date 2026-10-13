@@ -1,6 +1,6 @@
 import Image from 'next/image';
 import { Award, Truck, MessageCircle, Check } from 'lucide-react';
-import config from '@/data/config.json';
+import { config } from '@/lib/data';
 import { waLink } from '@/lib/utils/whatsapp';
 import HeroLogo from './HeroLogo';
 

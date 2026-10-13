@@ -1,0 +1,115 @@
+/* ---------- Dialog ---------- */
+dialog,
+dialog[open] {
+  margin: auto;                                  /* WAJIB: memulihkan centering */
+  width: min(880px, calc(100vw - 2rem));
+  max-width: none;
+  max-height: calc(100dvh - 2rem);
+  border: 0;
+  padding: 0;
+  background: transparent;
+  color: var(--text);
+  overflow: visible;
+}
+
+dialog::backdrop {
+  background: rgba(2, 14, 10, .8);
+  -webkit-backdrop-filter: blur(6px);
+  backdrop-filter: blur(6px);
+}
+
+.dlg {                                           /* wrapper di dalam <dialog> */
+  position: relative;
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);         /* cegah konten melebar */
+  grid-template-rows: auto minmax(0, 1fr);
+  background: var(--surface);
+  border-radius: 24px;
+  overflow: hidden;
+  max-height: calc(100dvh - 2rem);
+}
+
+.dlg .art {
+  height: clamp(170px, 32dvh, 260px);
+  display: grid;
+  place-items: center;
+  padding-top: .5rem;
+}
+
+.dlg .art svg,
+.dlg .art img {
+  height: 100%;
+  width: auto;
+  max-width: 100%;
+}
+
+.dlg-body {                                      /* hanya bagian ini yang boleh scroll */
+  min-width: 0;
+  min-height: 0;
+  overflow-y: auto;
+  overscroll-behavior: contain;
+  display: flex;
+  flex-direction: column;
+  gap: .6rem;
+  padding: 1.25rem 1.25rem 1.5rem;
+}
+
+.dlg-body h2 {
+  text-wrap: balance;
+}
+
+.dlg-body .price {
+  font-size: 1.6rem;
+}
+
+.dlg-body p {
+  color: var(--text-2);
+}
+
+.dlg-actions {
+  display: grid;
+  gap: 1rem;
+  margin-top: .75rem;
+}
+
+.dlg-actions .btn {
+  width: 100%;
+}
+
+.dlg-mp {
+  display: flex;
+  flex-wrap: wrap;
+  gap: .25rem 1.25rem;
+  color: var(--text-2);
+  font-size: .9375rem;
+  align-items: center;
+}
+
+.dlg-close {
+  position: absolute;
+  top: .75rem;
+  right: .75rem;
+  z-index: 2;
+  background: rgba(3, 26, 19, .7);
+}
+
+@media (min-width: 720px) {
+  .dlg {
+    grid-template-columns: minmax(0, .9fr) minmax(0, 1.1fr);
+    grid-template-rows: none;
+  }
+  .dlg .art {
+    height: auto;
+    min-height: 420px;
+    padding: 2rem;
+  }
+  .dlg .art svg,
+  .dlg .art img {
+    width: min(100%, 290px);
+    height: auto;
+  }
+  .dlg-body {
+    padding: 3rem 2.25rem 2.5rem;
+    justify-content: center;
+  }
+}

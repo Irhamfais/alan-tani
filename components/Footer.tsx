@@ -1,12 +1,21 @@
 import Image from 'next/image';
 import Link from 'next/link';
 import logoAlanTani from '@/public/logo-alan-tani-jaya.png';
+import { cacheLife } from 'next/cache';
 import { config } from '@/lib/data';
+import { waLink } from '@/lib/utils/whatsapp';
+
+// Cache Components forbids reading the clock during prerender, so the year is
+// computed inside a cached scope and refreshed daily (rolls over without a redeploy).
+// Rendered as one text node so glyph rendering matches the original static line.
+async function Copyright() {
+  'use cache';
+  cacheLife('days');
+  return <p className="copyright">{`© ${new Date().getFullYear()} Alan Tani`}</p>;
+}
 
 export default function Footer() {
-  const waUrl = `https://wa.me/${config.waNumber}?text=${encodeURIComponent(
-    'Halo, saya ingin bertanya tentang produk pertanian'
-  )}`;
+  const waUrl = waLink();
 
   return (
     <footer className="site-footer">
@@ -108,7 +117,7 @@ export default function Footer() {
           </div>
         </div>
 
-        <p className="copyright">&copy; 2026 Alan Tani</p>
+        <Copyright />
       </div>
     </footer>
   );

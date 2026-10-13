@@ -2,17 +2,7 @@
 
 import React, { useRef, useState } from 'react';
 import { ArrowLeft, ArrowRight } from 'lucide-react';
-import articles from '@/data/articles.json';
-
-interface ArticleItem {
-  id: string;
-  slug: string;
-  category: string;
-  date: string;
-  read: string;
-  title: string;
-  excerpt: string;
-}
+import { articles } from '@/lib/data';
 
 function ArticleArt({ index }: { index: number }) {
   const bgs = [
@@ -225,7 +215,7 @@ export default function ArticleCarousel() {
           tabIndex={0}
           onKeyDown={handleKeyDown}
         >
-          {(articles as ArticleItem[]).map((a, i) => (
+          {articles.map((a, i) => (
             <article className="acard" key={a.id}>
               <div className="art">
                 <ArticleArt index={i} />

@@ -2,15 +2,11 @@
 
 import { useState } from 'react';
 import { Product } from '@/lib/types';
-import productsData from '@/data/products.json';
-import config from '@/data/config.json';
 import ProductArt from './ProductArt';
 import ProductModal from './ProductModal';
 import formatRupiah from '@/lib/utils/format';
 import { waLink } from '@/lib/utils/whatsapp';
-import { CATEGORIES } from '@/lib/data';
-
-const products = productsData as unknown as Product[];
+import { CATEGORIES, config, products } from '@/lib/data';
 
 const FILTER_CATEGORIES = [
   { key: 'all', label: 'Semua' },

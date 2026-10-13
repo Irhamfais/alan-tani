@@ -1,6 +1,6 @@
 import React from 'react';
 import { Award, MapPin } from 'lucide-react';
-import config from '@/data/config.json';
+import { config } from '@/lib/data';
 
 export function Shop1Art() {
   const stripes = [];

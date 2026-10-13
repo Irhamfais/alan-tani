@@ -4,7 +4,7 @@ import { useState, useEffect, useRef } from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
 import logoAlanTani from '@/public/logo-alan-tani-jaya.png';
-import config from '@/data/config.json';
+import { config } from '@/lib/data';
 import { waLink } from '@/lib/utils/whatsapp';
 
 export default function Header() {

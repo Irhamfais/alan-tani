@@ -3,9 +3,11 @@ import productsData from '@/data/products.json';
 import articlesData from '@/data/articles.json';
 import { AppConfig, Product, Article } from './types';
 
-export const config: AppConfig = configData as unknown as AppConfig;
-export const products: Product[] = productsData as unknown as Product[];
-export const articles: Article[] = articlesData as unknown as Article[];
+// Single entry point for site data: components import from here, never from data/*.json.
+// JSON imports widen string unions (e.g. category) to `string`, hence the assertions.
+export const config = configData as AppConfig;
+export const products = productsData as Product[];
+export const articles = articlesData as Article[];
 
 export const CATEGORIES: Record<string, string> = {
   semua: 'Semua',

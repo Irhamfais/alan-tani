@@ -1,5 +1,6 @@
 import type { Metadata } from 'next';
 import { Bricolage_Grotesque, Figtree } from 'next/font/google';
+import { config } from '@/lib/data';
 import './globals.css';
 
 const bricolage = Bricolage_Grotesque({
@@ -21,8 +22,6 @@ export const metadata: Metadata = {
   description: 'Alan Tani Jaya, R1 Seller di Tanggul, Jember. Pupuk, bibit, pestisida, dan alat pertanian asli, dikirim cepat ke seluruh Indonesia. Pesan lewat WhatsApp atau marketplace.',
 };
 
-import config from '@/data/config.json';
-
 const jsonLd = [
   {
     '@context': 'https://schema.org',
@@ -30,7 +29,7 @@ const jsonLd = [
     '@id': 'https://alantani.com/#toko-induk',
     name: 'Alan Tani Jaya - Toko Induk',
     image: 'https://alantani.com/logo-alan-tani-jaya.png',
-    telephone: config.whatsappDisplay,
+    telephone: config.waDisplay,
     email: config.email,
     address: {
       '@type': 'PostalAddress',
@@ -39,7 +38,7 @@ const jsonLd = [
       addressRegion: 'Jawa Timur',
       addressCountry: 'ID',
     },
-    openingHours: 'Mo,Tu,We,Th,Fr,Sa,Su 07:00-16:00',
+    openingHours: config.openingHoursSchema,
     hasMap: config.stores[0].mapsUrl,
   },
   {
@@ -48,7 +47,7 @@ const jsonLd = [
     '@id': 'https://alantani.com/#toko-cabang',
     name: 'Alan Tani Jaya - Toko Cabang',
     image: 'https://alantani.com/logo-alan-tani-jaya.png',
-    telephone: config.whatsappDisplay,
+    telephone: config.waDisplay,
     email: config.email,
     address: {
       '@type': 'PostalAddress',
@@ -57,7 +56,7 @@ const jsonLd = [
       addressRegion: 'Jawa Timur',
       addressCountry: 'ID',
     },
-    openingHours: 'Mo,Tu,We,Th,Fr,Sa,Su 07:00-16:00',
+    openingHours: config.openingHoursSchema,
     hasMap: config.stores[1].mapsUrl,
   },
 ];

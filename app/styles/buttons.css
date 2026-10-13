@@ -1,0 +1,103 @@
+/* ---------- Buttons ---------- */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: .65rem;
+  min-height: 48px;
+  padding: .75rem 1.4rem;
+  border-radius: 999px;
+  font-weight: 600;
+  transition: background-color .2s, border-color .2s, box-shadow .2s, color .2s;
+}
+
+.btn svg {
+  width: 18px;
+  height: 18px;
+  flex: none;
+}
+
+.btn-primary {
+  background: var(--accent);
+  color: var(--on-accent);
+  box-shadow: 0 0 34px -8px rgba(43, 214, 111, .6);
+}
+
+.btn-primary:hover {
+  background: var(--accent-hi);
+}
+
+.btn-dot {
+  width: 28px;
+  height: 28px;
+  margin-right: -.55rem;
+  border-radius: 50%;
+  background: var(--on-accent);
+  color: var(--accent);
+  display: grid;
+  place-items: center;
+}
+
+.btn-dot svg {
+  width: 14px;
+  height: 14px;
+}
+
+.btn-ghost {
+  border: 1px solid rgba(234, 246, 239, .28);
+}
+
+.btn-ghost:hover {
+  border-color: var(--accent);
+  color: var(--accent);
+}
+
+.btn-sm {
+  min-height: 44px;
+  padding: .5rem 1.1rem;
+}
+
+.icon-btn {
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  display: grid;
+  place-items: center;
+  flex: none;
+  transition: background-color .2s, color .2s;
+}
+
+.icon-btn svg {
+  width: 20px;
+  height: 20px;
+}
+
+.icon-btn--wa {
+  background: var(--accent);
+  color: var(--on-accent);
+}
+
+.icon-btn--wa:hover {
+  background: var(--accent-hi);
+}
+
+.icon-btn--ghost {
+  background: rgba(234, 246, 239, .08);
+}
+
+.icon-btn--ghost:hover {
+  background: var(--accent);
+  color: var(--on-accent);
+}
+
+.text-link {
+  text-decoration: underline;
+  text-decoration-color: rgba(234, 246, 239, .35);
+  text-underline-offset: 4px;
+  transition: color .2s, text-decoration-color .2s;
+}
+
+.text-link:hover {
+  color: var(--accent);
+  text-decoration-color: var(--accent);
+}
