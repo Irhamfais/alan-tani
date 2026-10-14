@@ -78,7 +78,7 @@ Formula pupuk dapat berubah mengikuti kebijakan. Misalnya, pupuk NPK bersubsidi 
 
 ## Butuh bantuan memilih pupuk?
 
-Tim **Alan Tani** di Tanggul, Jember, siap membantu Anda mencocokkan jenis pupuk dengan tanaman dan kebutuhan lahan. Ceritakan tanaman dan kondisi lahan Anda lewat [WhatsApp](https://wa.me/6285875613333?text=Halo%20Alan%20Tani%2C%20saya%20ingin%20konsultasi%20soal%20pupuk), atau lihat [daftar produk pupuk kami](/#produk).
+Tim **Alan Tani** siap membantu Anda mencocokkan jenis pupuk dengan tanaman dan kebutuhan lahan. Ceritakan tanaman dan kondisi lahan Anda lewat [WhatsApp](https://wa.me/6285875613333?text=Halo%20Alan%20Tani%2C%20saya%20ingin%20konsultasi%20soal%20pupuk), atau lihat [daftar produk pupuk kami](/#produk).
 
 _Artikel ini bersifat informasi umum. Dosis dan jenis pupuk yang paling tepat bergantung pada kondisi lahan Anda; konsultasikan juga dengan penyuluh pertanian setempat._
 

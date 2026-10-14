@@ -90,7 +90,7 @@ Pusing, mual, muntah, sakit kepala, sesak napas, penglihatan kabur, atau iritasi
 
 ## Perlu rekomendasi produk?
 
-Tim **Alan Tani** di Tanggul, Jember, dapat membantu memilih pestisida yang sesuai dengan masalah di lahan Anda, sekaligus menjelaskan cara pakainya. Hubungi kami lewat [WhatsApp](https://wa.me/6285875613333?text=Halo%20Alan%20Tani%2C%20saya%20ingin%20konsultasi%20soal%20pestisida), atau lihat [produk pestisida kami](/#produk).
+Tim **Alan Tani** dapat membantu memilih pestisida yang sesuai dengan masalah di lahan Anda, sekaligus menjelaskan cara pakainya. Hubungi kami lewat [WhatsApp](https://wa.me/6285875613333?text=Halo%20Alan%20Tani%2C%20saya%20ingin%20konsultasi%20soal%20pestisida), atau lihat [produk pestisida kami](/#produk).
 
 _Artikel ini bersifat informasi umum. Selalu utamakan petunjuk pada label produk dan arahan penyuluh pertanian atau tenaga kesehatan._
 
