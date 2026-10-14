@@ -11,6 +11,11 @@ export function waLink(productName?: string): string {
     ? `Halo, saya ingin bertanya tentang produk: ${productName}`
     : 'Halo, saya ingin bertanya tentang produk pertanian';
 
+  return waLinkText(text);
+}
+
+/** WhatsApp click-to-chat URL with an arbitrary prefilled message. */
+export function waLinkText(text: string): string {
   return `https://wa.me/${config.waNumber}?text=${encodeURIComponent(text)}`;
 }
 

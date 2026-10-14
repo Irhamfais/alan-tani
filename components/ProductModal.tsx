@@ -1,11 +1,11 @@
 'use client';
 
-import { useEffect, useRef } from 'react';
 import { Maximize2 } from 'lucide-react';
 import { Product } from '@/lib/types';
 import ProductArt from './ProductArt';
 import { waLink } from '@/lib/utils/whatsapp';
 import { CATEGORIES, config } from '@/lib/data';
+import { useModalDialog } from '@/lib/hooks/useModalDialog';
 
 interface ProductModalProps {
   product: Product | null;
@@ -13,65 +13,8 @@ interface ProductModalProps {
 }
 
 export default function ProductModal({ product, onClose }: ProductModalProps) {
-  const dialogRef = useRef<HTMLDialogElement>(null);
-  const previousActiveElementRef = useRef<HTMLElement | null>(null);
-
-  useEffect(() => {
-    const dlg = dialogRef.current;
-    if (!dlg) return;
-
-    if (product) {
-      previousActiveElementRef.current = document.activeElement as HTMLElement | null;
-      document.documentElement.style.overflow = 'hidden';
-      if (!dlg.open) {
-        dlg.showModal();
-      }
-    } else {
-      document.documentElement.style.overflow = '';
-      if (dlg.open) {
-        dlg.close();
-      }
-      if (previousActiveElementRef.current) {
-        previousActiveElementRef.current.focus();
-        previousActiveElementRef.current = null;
-      }
-    }
-
-    return () => {
-      document.documentElement.style.overflow = '';
-    };
-  }, [product]);
-
-  useEffect(() => {
-    const dlg = dialogRef.current;
-    if (!dlg) return;
-
-    const handleClose = () => {
-      document.documentElement.style.overflow = '';
-      onClose();
-      if (previousActiveElementRef.current) {
-        previousActiveElementRef.current.focus();
-        previousActiveElementRef.current = null;
-      }
-    };
-
-    dlg.addEventListener('close', handleClose);
-    return () => {
-      dlg.removeEventListener('close', handleClose);
-    };
-  }, [onClose]);
-
-  const handleBackdropClick = (e: React.MouseEvent<HTMLDialogElement>) => {
-    if (e.target === dialogRef.current) {
-      document.documentElement.style.overflow = '';
-      dialogRef.current?.close();
-    }
-  };
-
-  const handleCloseClick = () => {
-    document.documentElement.style.overflow = '';
-    dialogRef.current?.close();
-  };
+  const { dialogRef, close, handleBackdropClick } = useModalDialog(product !== null, onClose);
+  const handleCloseClick = () => close();
 
   return (
     <dialog

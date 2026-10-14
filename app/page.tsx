@@ -7,6 +7,7 @@ import TestimonialsSection from '@/components/TestimonialsSection';
 import ContactSection from '@/components/ContactSection';
 import Footer from '@/components/Footer';
 import FloatingWhatsApp from '@/components/FloatingWhatsApp';
+import { getArticles } from '@/lib/articles';
 
 export default function HomePage() {
   return (
@@ -15,7 +16,7 @@ export default function HomePage() {
       <main id="main">
         <Hero />
         <ProductCatalog />
-        <ArticleCarousel />
+        <ArticleCarousel articles={getArticles()} />
         <AboutSection />
         <TestimonialsSection />
         <ContactSection />

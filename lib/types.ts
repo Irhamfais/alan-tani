@@ -64,12 +64,20 @@ export interface Product {
   tag2: string;
 }
 
+/** An article parsed from content/articles/<slug>.md (see lib/articles.ts). */
 export interface Article {
   id: string;
   slug: string;
-  category: string;
-  date: string;
-  read: string;
   title: string;
   excerpt: string;
+  category: string;
+  /** Square (1:1) photo under /public. */
+  image: string;
+  /** ISO date, YYYY-MM-DD. */
+  publishedDate: string;
+  /** Display date, e.g. "14 Okt 2026". */
+  dateLabel: string;
+  readingTime: string;
+  /** Article body rendered from markdown at build time. */
+  html: string;
 }
