@@ -4,15 +4,9 @@ import fs from 'node:fs';
 import path from 'node:path';
 import { marked } from 'marked';
 import type { Article } from './types';
+import { formatDateId } from './utils/format';
 
 const ARTICLES_DIR = path.join(process.cwd(), 'content', 'articles');
-const MONTHS = ['Jan', 'Feb', 'Mar', 'Apr', 'Mei', 'Jun', 'Jul', 'Agu', 'Sep', 'Okt', 'Nov', 'Des'];
-
-/** "2026-10-14" -> "14 Okt 2026" */
-function formatDate(iso: string): string {
-  const [y, m, d] = iso.split('-').map(Number);
-  return `${d} ${MONTHS[m - 1]} ${y}`;
-}
 
 /** Minimal frontmatter parser for flat `key: "value"` pairs. */
 function parseFrontmatter(raw: string): { meta: Record<string, string>; body: string } {
@@ -48,7 +42,7 @@ function readArticle(file: string): Article {
     category: meta.category,
     image: meta.featuredImage,
     publishedDate: meta.publishedDate,
-    dateLabel: formatDate(meta.publishedDate),
+    dateLabel: formatDateId(meta.publishedDate),
     readingTime: meta.readingTime,
     html: renderBody(body),
   };

@@ -64,6 +64,26 @@ export interface Product {
   tag2: string;
 }
 
+export interface TestimonialSummary {
+  platform: string;
+  rating: number;
+  ratingScale: number;
+  /** Pre-formatted, e.g. "1.700+ ulasan". Re-check on the marketplace before changing. */
+  reviewCountLabel: string;
+}
+
+export interface Testimonial {
+  id: string;
+  /** Masked buyer name as shown on the marketplace, e.g. "s*****a". */
+  name: string;
+  source: string;
+  rating: number;
+  product: string | null;
+  /** ISO date (YYYY-MM-DD), or null when unknown. */
+  date: string | null;
+  text: string;
+}
+
 /** An article parsed from content/articles/<slug>.md (see lib/articles.ts). */
 export interface Article {
   id: string;

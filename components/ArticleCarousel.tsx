@@ -1,9 +1,10 @@
 'use client';
 
-import React, { useRef, useState } from 'react';
+import { useState } from 'react';
 import Image from 'next/image';
 import { ArrowLeft, ArrowRight } from 'lucide-react';
 import type { Article } from '@/lib/types';
+import { useCarousel } from '@/lib/hooks/useCarousel';
 import ArticleModal from './ArticleModal';
 
 interface ArticleCarouselProps {
@@ -11,32 +12,8 @@ interface ArticleCarouselProps {
 }
 
 export default function ArticleCarousel({ articles }: ArticleCarouselProps) {
-  const carouselRef = useRef<HTMLDivElement>(null);
+  const { trackRef: carouselRef, slide, handleKeyDown } = useCarousel('.acard');
   const [selectedArticle, setSelectedArticle] = useState<Article | null>(null);
-
-  const slide = (dir: number) => {
-    if (!carouselRef.current) return;
-    const car = carouselRef.current;
-    const card = car.querySelector('.acard') as HTMLElement | null;
-    const cardWidth = card ? card.offsetWidth : 340;
-    const reduce =
-      typeof window !== 'undefined' &&
-      window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-    car.scrollBy({
-      left: dir * (cardWidth + 20),
-      behavior: reduce ? 'auto' : 'smooth',
-    });
-  };
-
-  const handleKeyDown = (e: React.KeyboardEvent<HTMLDivElement>) => {
-    if (e.key === 'ArrowRight') {
-      e.preventDefault();
-      slide(1);
-    } else if (e.key === 'ArrowLeft') {
-      e.preventDefault();
-      slide(-1);
-    }
-  };
 
   return (
     <section className="section section--alt" id="artikel" aria-labelledby="artikelTitle">

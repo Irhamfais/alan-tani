@@ -16,4 +16,15 @@ export function formatRupiah(amount: number): string {
   return idrFormatter.format(amount).replace(/\u00a0/g, ' ');
 }
 
+const MONTHS_ID = ['Jan', 'Feb', 'Mar', 'Apr', 'Mei', 'Jun', 'Jul', 'Agu', 'Sep', 'Okt', 'Nov', 'Des'];
+
+/**
+ * Formats an ISO date as a short Indonesian date (e.g. "2026-10-14" -> "14 Okt 2026").
+ * Parsed by hand rather than via Date so the result never shifts with the time zone.
+ */
+export function formatDateId(iso: string): string {
+  const [y, m, d] = iso.split('-').map(Number);
+  return `${d} ${MONTHS_ID[m - 1]} ${y}`;
+}
+
 export default formatRupiah;
