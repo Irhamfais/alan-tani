@@ -76,5 +76,6 @@ _Artikel ini bersifat informasi umum dan perlu disesuaikan dengan komoditas, var
 - Antara Jawa Timur, "Strategi parit, bedengan, mulsa di balik perjuangan petani bawang merah": [jatim.antaranews.com](https://jatim.antaranews.com/berita/1044851/strategi-parit-bedengan-mulsa-di-balik-perjuangan-petani-bawang-merah)
 - BSIP Banten, panduan teknis budidaya hortikultura (drainase dan jarak tanam pada musim hujan): [banten.bsip.pertanian.go.id](https://banten.bsip.pertanian.go.id/)
 - Kementerian Pertanian, Direktorat Jenderal Hortikultura: [hortikultura.pertanian.go.id](https://hortikultura.pertanian.go.id/)
+- Foto utama artikel: [Pexels](https://www.pexels.com)
 
 _Terakhir diperiksa: 14 Oktober 2026._

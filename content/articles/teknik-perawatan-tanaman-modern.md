@@ -103,5 +103,6 @@ _Artikel ini bersifat informasi umum. Spesifikasi dan ukuran yang tepat bergantu
 - BSIP Banten, panduan teknis budidaya hortikultura (bedengan, drainase, dan jarak tanam): [banten.bsip.pertanian.go.id](https://banten.bsip.pertanian.go.id/)
 - Publikasi ilmiah dan penyuluhan tentang manfaat mulsa plastik hitam perak pada tanaman hortikultura (Kementerian Pertanian dan perguruan tinggi)
 - University of Florida IFAS Extension (EDIS), tentang penyumbatan emitter pada irigasi tetes: [edis.ifas.ufl.edu](https://edis.ifas.ufl.edu/)
+- Foto utama artikel: [Pexels](https://www.pexels.com)
 
 _Terakhir diperiksa: 14 Oktober 2026._

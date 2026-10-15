@@ -100,5 +100,6 @@ _Artikel ini bersifat informasi umum. Selalu utamakan petunjuk pada label produk
 - Pemerintah Kabupaten Bangka, Pedoman Teknis Inovasi Gerak Tepat (Enam Tepat pestisida): [bappeda.bangka.go.id](https://bappeda.bangka.go.id/sites/default/files/dokumen/bank_data/PEDOMA%20TEKNIS%20INOVASI%20GERAK%20TEPAT.pdf)
 - Kementerian Pertanian, Direktorat Jenderal Hortikultura, "Penyegaran Strategi Penerapan PHT Hortikultura": [data.hortikultura.pertanian.go.id](https://data.hortikultura.pertanian.go.id/webi/uploads/webinarfile/2021/312/Penyegaran_Strategi_Penerapan_PHT_Hortikultura.pdf)
 - Kementerian Pertanian, Direktorat Jenderal Prasarana dan Sarana Pertanian (informasi pestisida terdaftar): [psp.pertanian.go.id](https://psp.pertanian.go.id/)
+- Foto utama artikel: [Pexels](https://www.pexels.com)
 
 _Terakhir diperiksa: 14 Oktober 2026._

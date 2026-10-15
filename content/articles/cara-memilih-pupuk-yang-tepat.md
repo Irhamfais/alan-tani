@@ -88,5 +88,6 @@ _Artikel ini bersifat informasi umum. Dosis dan jenis pupuk yang paling tepat be
 - BSIP Kepulauan Riau, "BSIP Kepri dampingi petani terapkan standar pemupukan padi": [kepri.bsip.pertanian.go.id](https://kepri.bsip.pertanian.go.id/berita/bsip-kepri-dampingi-petani-terapkan-standar-pemupukan-padi)
 - Kementerian Pertanian, Rekomendasi pemupukan N, P, dan K pada padi sawah per kecamatan (Balai Penelitian Tanah / BSIP Tanah dan Pupuk): [kikp-pertanian.id](https://kikp-pertanian.id/)
 - Kementerian Pertanian, Perangkat Uji Tanah Sawah (PUTS) dan panduan pemupukan berimbang: [pertanian.go.id](https://pertanian.go.id)
+- Foto utama artikel: [Pexels](https://www.pexels.com)
 
 _Terakhir diperiksa: 14 Oktober 2026._

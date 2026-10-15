@@ -93,5 +93,6 @@ _Artikel ini bersifat informasi umum. Persyaratan mutu dan masa edar dapat berbe
 - Badan Standardisasi Instrumen Pertanian (BSIP) dan Balai Pengawasan dan Sertifikasi Benih, informasi kelas benih, warna label, dan standar mutu benih padi: [brmp.pertanian.go.id](https://brmp.pertanian.go.id/)
 - Institut Teknologi Bandung (FTTM), Modul "Uji Potensi Berkecambah Benih dan Uji Daya Berkecambah Benih" (metode uji daya kecambah): [fttm.itb.ac.id](https://fttm.itb.ac.id/wp-content/uploads/sites/168/2018/02/Modul-3-UJI-POTENSI-BERKECAMBAH-BENIH-DAN-UJI-DAYA-BERKECAMBAH-BENIH.pdf)
 - Kementerian Pertanian, Direktorat Jenderal Tanaman Pangan dan Direktorat Jenderal Hortikultura: [pertanian.go.id](https://pertanian.go.id)
+- Foto utama artikel: [Pexels](https://www.pexels.com)
 
 _Terakhir diperiksa: 14 Oktober 2026._
