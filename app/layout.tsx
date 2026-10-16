@@ -26,9 +26,9 @@ const jsonLd = [
   {
     '@context': 'https://schema.org',
     '@type': 'LocalBusiness',
-    '@id': 'https://alantani.com/#toko-induk',
+    '@id': `${config.siteUrl}/#toko-induk`,
     name: 'Alan Tani Jaya - Toko Induk',
-    image: 'https://alantani.com/logo-alan-tani-jaya.png',
+    image: `${config.siteUrl}/logo-alan-tani-jaya.png`,
     telephone: config.waDisplay,
     email: config.email,
     address: {
@@ -44,9 +44,9 @@ const jsonLd = [
   {
     '@context': 'https://schema.org',
     '@type': 'LocalBusiness',
-    '@id': 'https://alantani.com/#toko-cabang',
+    '@id': `${config.siteUrl}/#toko-cabang`,
     name: 'Alan Tani Jaya - Toko Cabang',
-    image: 'https://alantani.com/logo-alan-tani-jaya.png',
+    image: `${config.siteUrl}/logo-alan-tani-jaya.png`,
     telephone: config.waDisplay,
     email: config.email,
     address: {

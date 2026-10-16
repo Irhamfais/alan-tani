@@ -7,6 +7,8 @@ export interface StoreLocation {
 
 export interface AppConfig {
   storeName: string;
+  /** Canonical site origin without trailing slash, e.g. "https://alantanijaya.com". */
+  siteUrl: string;
   tagline: string;
   established: string;
   /** WhatsApp number in international format without "+", used for wa.me links. */
