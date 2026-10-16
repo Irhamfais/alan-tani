@@ -45,8 +45,11 @@ if (!isLocal) {
   check('http dialihkan ke https', [301, 302, 307, 308].includes(httpRes.status) && (httpRes.headers.get('location') || '').startsWith('https://'),
     `${httpRes.status} -> ${httpRes.headers.get('location')}`);
   const wwwRes = await fetch(`https://www.${host}/`, { redirect: 'manual' });
-  check('www dialihkan ke alamat utama', [301, 308].includes(wwwRes.status) && (wwwRes.headers.get('location') || '').startsWith(`${config.siteUrl}/`),
-    `${wwwRes.status} -> ${wwwRes.headers.get('location') || '-'}`);
+  const wwwLocation = wwwRes.headers.get('location');
+  // Compare origins: Next.js sends the root as "https://domain" (no trailing slash), which equals "https://domain/".
+  const wwwTarget = wwwLocation ? new URL(wwwLocation, `https://www.${host}`).origin : null;
+  check('www dialihkan ke alamat utama', [301, 308].includes(wwwRes.status) && wwwTarget === config.siteUrl,
+    `${wwwRes.status} -> ${wwwLocation || '-'}`);
 }
 
 // ---- Browser level ----
