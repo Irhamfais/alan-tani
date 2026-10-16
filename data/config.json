@@ -14,13 +14,15 @@
       "id": "induk",
       "name": "Toko induk",
       "address": "Jl. Urip Sumoharjo No.74, Tekoan, Tanggul Kulon, Kec. Tanggul, Kabupaten Jember, Jawa Timur",
-      "mapsUrl": "https://maps.app.goo.gl/6cgLTqpmjc5grXzj7"
+      "mapsUrl": "https://maps.app.goo.gl/6cgLTqpmjc5grXzj7",
+      "photo": "/images/store/toko-induk.jpg"
     },
     {
       "id": "cabang",
       "name": "Toko cabang",
       "address": "Jl. Mawar (pasar, Tekoan), Tanggul Kulon, Kec. Tanggul, Kabupaten Jember, Jawa Timur",
-      "mapsUrl": "https://maps.app.goo.gl/AdLX6aMTjcr6WE9F8"
+      "mapsUrl": "https://maps.app.goo.gl/AdLX6aMTjcr6WE9F8",
+      "photo": "/images/store/toko-cabang.jpg"
     }
   ],
   "marketplace": {

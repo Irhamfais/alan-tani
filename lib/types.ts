@@ -3,6 +3,8 @@ export interface StoreLocation {
   name: string;
   address: string;
   mapsUrl: string;
+  /** Storefront photo under /public, cropped to 16:10. */
+  photo: string;
 }
 
 export interface AppConfig {

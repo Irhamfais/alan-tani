@@ -1,109 +1,20 @@
 import React from 'react';
+import Image from 'next/image';
 import { Award, MapPin } from 'lucide-react';
 import { config } from '@/lib/data';
+import type { StoreLocation } from '@/lib/types';
 
-export function Shop1Art() {
-  const stripes = [];
-  for (let i = 0; i < 12; i++) {
-    stripes.push(
-      <rect
-        key={i}
-        x={110 + i * 35}
-        y="100"
-        width="35"
-        height="56"
-        fill={i % 2 ? '#EAF6EF' : '#2BD66F'}
-      />
-    );
-  }
-
+function StorePhoto({ store }: { store: StoreLocation }) {
   return (
-    <svg
-      viewBox="0 0 640 400"
-      role="img"
-      aria-label="Ilustrasi sementara Toko Induk Alan Tani"
-      xmlns="http://www.w3.org/2000/svg"
-      id="shop1"
-    >
-      <defs>
-        <linearGradient id="sg1" x1="0" y1="0" x2="0" y2="1">
-          <stop offset="0" stopColor="#0E4A37" />
-          <stop offset="1" stopColor="#052A1F" />
-        </linearGradient>
-      </defs>
-      <rect width="640" height="400" fill="url(#sg1)" />
-      <rect y="330" width="640" height="70" fill="#031A13" />
-      <rect x="120" y="150" width="400" height="180" fill="#0F5A41" />
-      {stripes}
-      <rect x="150" y="190" width="110" height="80" rx="6" fill="#0A3D2D" />
-      <rect x="380" y="190" width="110" height="80" rx="6" fill="#0A3D2D" />
-      <rect x="290" y="200" width="60" height="130" rx="4" fill="#052A1F" />
-      <rect x="230" y="56" width="180" height="36" rx="8" fill="#031A13" />
-      <text
-        x="320"
-        y="81"
-        textAnchor="middle"
-        fontFamily="var(--font-display), Bricolage Grotesque, sans-serif"
-        fontWeight="700"
-        fontSize="20"
-        fill="#2BD66F"
-      >
-        Alan Tani
-      </text>
-    </svg>
-  );
-}
-
-export function Shop2Art() {
-  const lines = [];
-  for (let i = 0; i < 6; i++) {
-    lines.push(
-      <path
-        key={i}
-        d={`M250 ${198 + i * 22}H390`}
-        stroke="#0A3D2D"
-        strokeWidth="3"
+    <div className="store-photo">
+      <Image
+        src={store.photo}
+        alt={`Tampak depan ${store.name.toLowerCase()} Alan Tani Jaya`}
+        fill
+        sizes="(min-width: 720px) 50vw, 100vw"
+        quality={75}
       />
-    );
-  }
-
-  return (
-    <svg
-      viewBox="0 0 640 400"
-      role="img"
-      aria-label="Ilustrasi sementara Toko Cabang Alan Tani"
-      xmlns="http://www.w3.org/2000/svg"
-      id="shop2"
-    >
-      <defs>
-        <linearGradient id="sg2" x1="0" y1="0" x2="0" y2="1">
-          <stop offset="0" stopColor="#0E4A37" />
-          <stop offset="1" stopColor="#052A1F" />
-        </linearGradient>
-      </defs>
-      <rect width="640" height="400" fill="url(#sg2)" />
-      <rect y="330" width="640" height="70" fill="#031A13" />
-      <rect x="80" y="120" width="480" height="210" fill="#0F5A41" />
-      <path d="M70 120L320 70L570 120Z" fill="#0A3D2D" />
-      <rect x="230" y="180" width="180" height="150" rx="4" fill="#052A1F" />
-      {lines}
-      <rect x="104" y="270" width="52" height="60" rx="14" fill="#CFE3D6" />
-      <rect x="164" y="282" width="44" height="48" rx="12" fill="#B5D2C2" />
-      <rect x="440" y="270" width="52" height="60" rx="14" fill="#CFE3D6" />
-      <rect x="498" y="282" width="44" height="48" rx="12" fill="#B5D2C2" />
-      <rect x="260" y="96" width="120" height="30" rx="7" fill="#031A13" />
-      <text
-        x="320"
-        y="117"
-        textAnchor="middle"
-        fontFamily="var(--font-display), Bricolage Grotesque, sans-serif"
-        fontWeight="700"
-        fontSize="17"
-        fill="#2BD66F"
-      >
-        Alan Tani
-      </text>
-    </svg>
+    </div>
   );
 }
 
@@ -198,7 +109,7 @@ export default function AboutSection() {
 
         <div className="gallery" id="galeri">
           <figure>
-            <Shop1Art />
+            <StorePhoto store={storeInduk} />
             <figcaption>
               <div>
                 <strong>{storeInduk.name}</strong>
@@ -216,7 +127,7 @@ export default function AboutSection() {
             </figcaption>
           </figure>
           <figure>
-            <Shop2Art />
+            <StorePhoto store={storeCabang} />
             <figcaption>
               <div>
                 <strong>{storeCabang.name}</strong>
@@ -234,10 +145,6 @@ export default function AboutSection() {
             </figcaption>
           </figure>
         </div>
-        <p className="note">
-          Ilustrasi toko bersifat sementara. Foto asli dari owner dipasang saat
-          implementasi.
-        </p>
 
         <div className="certs-head">
           <h3>Sertifikasi dan penghargaan</h3>
