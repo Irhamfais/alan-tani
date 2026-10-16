@@ -88,6 +88,18 @@ export interface Testimonial {
   text: string;
 }
 
+export interface Award {
+  id: string;
+  title: string;
+  /** Who gave the award, as printed on it (company names are not guessed). */
+  issuer: string;
+  /** Year as printed on the award, or null when it isn't shown. */
+  year: string | null;
+  /** Square photo under /public. */
+  image: string;
+  alt: string;
+}
+
 /** An article parsed from content/articles/<slug>.md (see lib/articles.ts). */
 export interface Article {
   id: string;

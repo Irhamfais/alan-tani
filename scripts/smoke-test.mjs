@@ -14,6 +14,7 @@ if (!base) {
 const config = JSON.parse(fs.readFileSync(new URL('../data/config.json', import.meta.url), 'utf8'));
 const products = JSON.parse(fs.readFileSync(new URL('../data/products.json', import.meta.url), 'utf8'));
 const testimonials = JSON.parse(fs.readFileSync(new URL('../data/testimonials.json', import.meta.url), 'utf8')).testimonials;
+const awards = JSON.parse(fs.readFileSync(new URL('../data/awards.json', import.meta.url), 'utf8'));
 const articleCount = fs.readdirSync(new URL('../content/articles/', import.meta.url)).filter((f) => f.endsWith('.md')).length;
 const isLocal = /^http:\/\/(localhost|127\.0\.0\.1)/.test(base);
 
@@ -66,6 +67,7 @@ const info = await page.evaluate(() => ({
   products: document.querySelectorAll('.pcard').length,
   articles: document.querySelectorAll('.acard').length,
   testimonials: document.querySelectorAll('.quote').length,
+  awards: document.querySelectorAll('.award').length,
   footer: document.querySelector('.copyright')?.textContent ?? '',
   icons: [...document.querySelectorAll('link[rel="icon"]')].map((l) => l.getAttribute('href').split('?')[0]),
   jsonLd: JSON.parse(document.querySelector('script[type="application/ld+json"]')?.textContent || '[]'),
@@ -73,6 +75,7 @@ const info = await page.evaluate(() => ({
 check('Jumlah produk', info.products === products.length, `${info.products}/${products.length}`);
 check('Jumlah artikel', info.articles === articleCount, `${info.articles}/${articleCount}`);
 check('Jumlah testimoni', info.testimonials === testimonials.length, `${info.testimonials}/${testimonials.length}`);
+check('Jumlah penghargaan', info.awards === awards.length, `${info.awards}/${awards.length}`);
 check('Tahun di footer', info.footer.includes(String(new Date().getFullYear())), info.footer);
 check('Favicon terpasang', info.icons.includes('/icon.svg') && info.icons.includes('/favicon.ico'), info.icons.join(', '));
 check('JSON-LD memakai domain situs', info.jsonLd.length > 0 && info.jsonLd.every((b) => b['@id'].startsWith(`${config.siteUrl}/`)),

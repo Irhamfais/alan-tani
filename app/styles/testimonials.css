@@ -29,19 +29,6 @@
   fill: #F2C14E;
 }
 
-/* Mouse users drag the row (see useCarousel dragHandlers); snap is paused mid-drag */
-@media (hover: hover) and (pointer: fine) {
-  .quotes {
-    cursor: grab;
-  }
-}
-
-.quotes.is-dragging {
-  cursor: grabbing;
-  scroll-snap-type: none;
-  user-select: none;
-}
-
 .quote {
   position: relative;
   flex: 0 0 min(360px, 86%);

@@ -55,7 +55,7 @@ export default function TestimonialsSection() {
         </div>
 
         <div
-          className="carousel quotes"
+          className="carousel carousel-drag quotes"
           id="testiCarousel"
           ref={trackRef}
           role="region"

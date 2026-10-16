@@ -1,7 +1,8 @@
 import configData from '@/data/config.json';
 import productsData from '@/data/products.json';
 import testimonialsData from '@/data/testimonials.json';
-import { AppConfig, Product, Testimonial, TestimonialSummary } from './types';
+import awardsData from '@/data/awards.json';
+import { AppConfig, Award, Product, Testimonial, TestimonialSummary } from './types';
 
 // Single entry point for site data: components import from here, never from data/*.json.
 // Articles live in content/articles/*.md and are read server-side by lib/articles.ts.
@@ -10,6 +11,7 @@ export const config = configData as AppConfig;
 export const products = productsData as Product[];
 export const testimonials = testimonialsData.testimonials as Testimonial[];
 export const testimonialSummary = testimonialsData.summary as TestimonialSummary;
+export const awards = awardsData as Award[];
 
 export const CATEGORIES: Record<string, string> = {
   semua: 'Semua',

@@ -1,8 +1,9 @@
 import React from 'react';
 import Image from 'next/image';
-import { Award, MapPin } from 'lucide-react';
+import { MapPin } from 'lucide-react';
 import { config } from '@/lib/data';
 import type { StoreLocation } from '@/lib/types';
+import AwardsCarousel from './AwardsCarousel';
 
 function StorePhoto({ store }: { store: StoreLocation }) {
   return (
@@ -147,36 +148,8 @@ export default function AboutSection() {
         </div>
 
         <div className="certs-head">
-          <h3>Sertifikasi dan penghargaan</h3>
-          <ul className="certs">
-            <li className="cert">
-              <span className="cert-icon">
-                <Award className="w-[26px] h-[26px]" aria-hidden="true" strokeWidth={1.75} />
-              </span>
-              <div>
-                <strong>Sertifikat 1</strong>
-                <span>File dari owner menyusul</span>
-              </div>
-            </li>
-            <li className="cert">
-              <span className="cert-icon">
-                <Award className="w-[26px] h-[26px]" aria-hidden="true" strokeWidth={1.75} />
-              </span>
-              <div>
-                <strong>Sertifikat 2</strong>
-                <span>File dari owner menyusul</span>
-              </div>
-            </li>
-            <li className="cert">
-              <span className="cert-icon">
-                <Award className="w-[26px] h-[26px]" aria-hidden="true" strokeWidth={1.75} />
-              </span>
-              <div>
-                <strong>Penghargaan</strong>
-                <span>File dari owner menyusul</span>
-              </div>
-            </li>
-          </ul>
+          <h3>Penghargaan</h3>
+          <AwardsCarousel />
         </div>
       </div>
     </section>
