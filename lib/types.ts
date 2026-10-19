@@ -5,6 +5,16 @@ export interface StoreLocation {
   mapsUrl: string;
   /** Storefront photo under /public, cropped to 16:10. */
   photo: string;
+  // Structured data (JSON-LD) only; not shown on the page.
+  /** Business name for search engines; matches the Google Business Profile when there is one. */
+  schemaName: string;
+  /** Other name the place is known by on Google Maps. */
+  alternateName?: string;
+  /** Street part of the address (locality, region and country are added in the JSON-LD). */
+  streetAddress: string;
+  geo: { lat: number; lng: number };
+  /** Google Business Profile URL, only for profiles the owner manages. */
+  gbpUrl?: string;
 }
 
 export interface AppConfig {

@@ -3,6 +3,7 @@ import { Bricolage_Grotesque, Figtree } from 'next/font/google';
 import { GoogleAnalytics } from '@next/third-parties/google';
 import { config } from '@/lib/data';
 import { GA_ID, SITE_URL } from '@/lib/env';
+import { buildJsonLd } from '@/lib/structured-data';
 import './globals.css';
 
 const bricolage = Bricolage_Grotesque({
@@ -19,49 +20,29 @@ const figtree = Figtree({
   display: 'swap',
 });
 
+const SITE_TITLE = 'Alan Tani Jaya, Solusi Terbaik Petani | Tanggul, Jember';
+const SITE_DESCRIPTION =
+  'Alan Tani Jaya, R1 Seller di Tanggul, Jember. Pupuk, bibit, pestisida, dan alat pertanian asli, dikirim cepat ke seluruh Indonesia. Pesan lewat WhatsApp atau marketplace.';
+
+// The share image comes from app/opengraph-image.jpg and app/twitter-image.jpg (file conventions).
 export const metadata: Metadata = {
-  title: 'Alan Tani Jaya, Solusi Terbaik Petani | Tanggul, Jember',
-  description: 'Alan Tani Jaya, R1 Seller di Tanggul, Jember. Pupuk, bibit, pestisida, dan alat pertanian asli, dikirim cepat ke seluruh Indonesia. Pesan lewat WhatsApp atau marketplace.',
+  metadataBase: new URL(SITE_URL),
+  title: { default: SITE_TITLE, template: `%s | ${config.storeName}` },
+  description: SITE_DESCRIPTION,
+  alternates: { canonical: '/' },
+  openGraph: {
+    type: 'website',
+    locale: 'id_ID',
+    siteName: config.storeName,
+    url: '/',
+    title: SITE_TITLE,
+    description: SITE_DESCRIPTION,
+  },
+  twitter: { card: 'summary_large_image', title: SITE_TITLE, description: SITE_DESCRIPTION },
+  robots: { index: true, follow: true },
 };
 
-const jsonLd = [
-  {
-    '@context': 'https://schema.org',
-    '@type': 'LocalBusiness',
-    '@id': `${SITE_URL}/#toko-induk`,
-    name: 'Alan Tani Jaya - Toko Induk',
-    image: `${SITE_URL}/logo-alan-tani-jaya.png`,
-    telephone: config.waDisplay,
-    email: config.email,
-    address: {
-      '@type': 'PostalAddress',
-      streetAddress: config.stores[0].address,
-      addressLocality: 'Tanggul',
-      addressRegion: 'Jawa Timur',
-      addressCountry: 'ID',
-    },
-    openingHours: config.openingHoursSchema,
-    hasMap: config.stores[0].mapsUrl,
-  },
-  {
-    '@context': 'https://schema.org',
-    '@type': 'LocalBusiness',
-    '@id': `${SITE_URL}/#toko-cabang`,
-    name: 'Alan Tani Jaya - Toko Cabang',
-    image: `${SITE_URL}/logo-alan-tani-jaya.png`,
-    telephone: config.waDisplay,
-    email: config.email,
-    address: {
-      '@type': 'PostalAddress',
-      streetAddress: config.stores[1].address,
-      addressLocality: 'Tanggul',
-      addressRegion: 'Jawa Timur',
-      addressCountry: 'ID',
-    },
-    openingHours: config.openingHoursSchema,
-    hasMap: config.stores[1].mapsUrl,
-  },
-];
+const jsonLd = buildJsonLd();
 
 export default function RootLayout({
   children,

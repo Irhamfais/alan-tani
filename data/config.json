@@ -15,14 +15,22 @@
       "name": "Toko induk",
       "address": "Jl. Urip Sumoharjo No.74, Tekoan, Tanggul Kulon, Kec. Tanggul, Kabupaten Jember, Jawa Timur",
       "mapsUrl": "https://maps.app.goo.gl/6cgLTqpmjc5grXzj7",
-      "photo": "/images/store/toko-induk.jpg"
+      "photo": "/images/store/toko-induk.jpg",
+      "schemaName": "Alan Tani Jaya - Toko Induk",
+      "alternateName": "Toko Pertanian Bumi Jaya",
+      "streetAddress": "Jl. Urip Sumoharjo No.74, Tekoan, Tanggul Kulon",
+      "geo": { "lat": -8.1605251, "lng": 113.4505942 }
     },
     {
       "id": "cabang",
       "name": "Toko cabang",
       "address": "Jl. Mawar (pasar, Tekoan), Tanggul Kulon, Kec. Tanggul, Kabupaten Jember, Jawa Timur",
       "mapsUrl": "https://maps.app.goo.gl/AdLX6aMTjcr6WE9F8",
-      "photo": "/images/store/toko-cabang.jpg"
+      "photo": "/images/store/toko-cabang.jpg",
+      "schemaName": "UD. Alan Tani Jaya",
+      "streetAddress": "Jl. Mawar (Pasar Tanggul), Tekoan, Tanggul Kulon",
+      "geo": { "lat": -8.1638085, "lng": 113.4518958 },
+      "gbpUrl": "https://maps.google.com/?cid=664989255665020107"
     }
   ],
   "marketplace": {
