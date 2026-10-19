@@ -1,7 +1,9 @@
 import type { NextConfig } from "next";
 import config from "./data/config.json";
 
-const siteHost = new URL(config.siteUrl).host;
+// Same rule as lib/env.ts: NEXT_PUBLIC_SITE_URL wins, data/config.json is the fallback.
+const siteUrl = (process.env.NEXT_PUBLIC_SITE_URL || config.siteUrl).replace(/\/+$/, "");
+const siteHost = new URL(siteUrl).host;
 
 const nextConfig: NextConfig = {
   cacheComponents: true,
@@ -15,7 +17,7 @@ const nextConfig: NextConfig = {
       {
         source: "/:path*",
         has: [{ type: "host", value: `www.${siteHost}` }],
-        destination: `${config.siteUrl}/:path*`,
+        destination: `${siteUrl}/:path*`,
         permanent: true,
       },
     ];

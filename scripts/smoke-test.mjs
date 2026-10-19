@@ -17,6 +17,9 @@ const testimonials = JSON.parse(fs.readFileSync(new URL('../data/testimonials.js
 const awards = JSON.parse(fs.readFileSync(new URL('../data/awards.json', import.meta.url), 'utf8'));
 const articleCount = fs.readdirSync(new URL('../content/articles/', import.meta.url)).filter((f) => f.endsWith('.md')).length;
 const isLocal = /^http:\/\/(localhost|127\.0\.0\.1)/.test(base);
+// Same rule as lib/env.ts. Set NEXT_PUBLIC_GA_ID when testing a local build that should include GA4.
+const siteUrl = (process.env.NEXT_PUBLIC_SITE_URL || config.siteUrl).replace(/\/+$/, '');
+const expectedGaId = process.env.NEXT_PUBLIC_GA_ID?.trim() || null;
 
 const results = [];
 const check = (name, ok, info = '') => {
@@ -49,7 +52,7 @@ if (!isLocal) {
   const wwwLocation = wwwRes.headers.get('location');
   // Compare origins: Next.js sends the root as "https://domain" (no trailing slash), which equals "https://domain/".
   const wwwTarget = wwwLocation ? new URL(wwwLocation, `https://www.${host}`).origin : null;
-  check('www dialihkan ke alamat utama', [301, 308].includes(wwwRes.status) && wwwTarget === config.siteUrl,
+  check('www dialihkan ke alamat utama', [301, 308].includes(wwwRes.status) && wwwTarget === siteUrl,
     `${wwwRes.status} -> ${wwwLocation || '-'}`);
 }
 
@@ -58,9 +61,18 @@ const browser = await chromium.launch();
 const page = await browser.newPage({ viewport: { width: 1280, height: 900 } });
 const consoleErrors = [];
 const badResponses = [];
-page.on('console', (m) => m.type() === 'error' && consoleErrors.push(m.text()));
+// Errors caused by blocking GA hits below (they don't name the URL in the text, only in location) are expected.
+const isGaNoise = (m) => /google-analytics|googletagmanager|g\/collect/.test(`${m.text()} ${m.location()?.url ?? ''}`);
+page.on('console', (m) => m.type() === 'error' && !isGaNoise(m) && consoleErrors.push(m.text()));
 page.on('pageerror', (e) => consoleErrors.push(e.message));
 page.on('response', (r) => r.status() >= 400 && badResponses.push(`${r.status()} ${r.url()}`));
+
+// Never send test traffic to the real GA4 property: record the hit, then block it.
+const gaHits = [];
+await page.route(/google-analytics\.com\/(g|.*\/g)\/collect|\/g\/collect\?/, (route) => {
+  gaHits.push(new URL(route.request().url()).searchParams.get('tid'));
+  return route.abort();
+});
 
 await page.goto(`${base}/`, { waitUntil: 'networkidle', timeout: 60000 });
 const info = await page.evaluate(() => ({
@@ -71,6 +83,7 @@ const info = await page.evaluate(() => ({
   footer: document.querySelector('.copyright')?.textContent ?? '',
   icons: [...document.querySelectorAll('link[rel="icon"]')].map((l) => l.getAttribute('href').split('?')[0]),
   jsonLd: JSON.parse(document.querySelector('script[type="application/ld+json"]')?.textContent || '[]'),
+  gaScript: document.querySelector('script[src*="googletagmanager.com/gtag/js"]')?.getAttribute('src') ?? null,
 }));
 check('Jumlah produk', info.products === products.length, `${info.products}/${products.length}`);
 check('Jumlah artikel', info.articles === articleCount, `${info.articles}/${articleCount}`);
@@ -78,8 +91,18 @@ check('Jumlah testimoni', info.testimonials === testimonials.length, `${info.tes
 check('Jumlah penghargaan', info.awards === awards.length, `${info.awards}/${awards.length}`);
 check('Tahun di footer', info.footer.includes(String(new Date().getFullYear())), info.footer);
 check('Favicon terpasang', info.icons.includes('/icon.svg') && info.icons.includes('/favicon.ico'), info.icons.join(', '));
-check('JSON-LD memakai domain situs', info.jsonLd.length > 0 && info.jsonLd.every((b) => b['@id'].startsWith(`${config.siteUrl}/`)),
+check('JSON-LD memakai domain situs', info.jsonLd.length > 0 && info.jsonLd.every((b) => b['@id'].startsWith(`${siteUrl}/`)),
   info.jsonLd.map((b) => b['@id']).join(', '));
+
+// GA4 is required on the live site; on a local build only when NEXT_PUBLIC_GA_ID was set for the test.
+const gaIdOnPage = info.gaScript ? new URL(info.gaScript, base).searchParams.get('id') : null;
+if (!isLocal || expectedGaId) {
+  await page.waitForTimeout(1500); // gtag sends page_view shortly after loading
+  check('GA4 terpasang', !!gaIdOnPage && (!expectedGaId || gaIdOnPage === expectedGaId), gaIdOnPage || 'script gtag.js tidak ditemukan');
+  check('GA4 mengirim page_view (diblokir saat tes)', gaHits.includes(gaIdOnPage), gaHits.length ? `tid ${[...new Set(gaHits)].join(', ')}` : 'tidak ada kiriman');
+} else {
+  check('GA4 tidak dimuat tanpa NEXT_PUBLIC_GA_ID', !gaIdOnPage, gaIdOnPage || 'tidak dimuat');
+}
 
 // Scroll the page and both carousels so every lazy image loads.
 // The site sets `scroll-behavior: smooth`, so scroll instantly or later clicks race the animation.

@@ -1,6 +1,8 @@
 import type { Metadata } from 'next';
 import { Bricolage_Grotesque, Figtree } from 'next/font/google';
+import { GoogleAnalytics } from '@next/third-parties/google';
 import { config } from '@/lib/data';
+import { GA_ID, SITE_URL } from '@/lib/env';
 import './globals.css';
 
 const bricolage = Bricolage_Grotesque({
@@ -26,9 +28,9 @@ const jsonLd = [
   {
     '@context': 'https://schema.org',
     '@type': 'LocalBusiness',
-    '@id': `${config.siteUrl}/#toko-induk`,
+    '@id': `${SITE_URL}/#toko-induk`,
     name: 'Alan Tani Jaya - Toko Induk',
-    image: `${config.siteUrl}/logo-alan-tani-jaya.png`,
+    image: `${SITE_URL}/logo-alan-tani-jaya.png`,
     telephone: config.waDisplay,
     email: config.email,
     address: {
@@ -44,9 +46,9 @@ const jsonLd = [
   {
     '@context': 'https://schema.org',
     '@type': 'LocalBusiness',
-    '@id': `${config.siteUrl}/#toko-cabang`,
+    '@id': `${SITE_URL}/#toko-cabang`,
     name: 'Alan Tani Jaya - Toko Cabang',
-    image: `${config.siteUrl}/logo-alan-tani-jaya.png`,
+    image: `${SITE_URL}/logo-alan-tani-jaya.png`,
     telephone: config.waDisplay,
     email: config.email,
     address: {
@@ -80,6 +82,7 @@ export default function RootLayout({
         </a>
         {children}
       </body>
+      {GA_ID && <GoogleAnalytics gaId={GA_ID} />}
     </html>
   );
 }
